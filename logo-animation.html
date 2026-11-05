@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logo animation</title>
+<link rel="canonical" href="https://threevistas.com/logo-animation.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0E0F10">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Three Vistas">
+<meta property="og:title" content="Logo animation">
+<meta property="og:url" content="https://threevistas.com/logo-animation.html">
+<meta property="og:image" content="https://threevistas.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Logo animation">
+<meta name="twitter:image" content="https://threevistas.com/og-image.png">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0E0F10}
+@keyframes tvSunArc{0%{offset-distance:0%;opacity:0}12%{opacity:1}100%{offset-distance:100%;opacity:1}}
+@keyframes tvSunColor{0%,30%{background-color:#CC9230}100%{background-color:var(--tv-accent)}}
+@keyframes tvGlowOut{0%,40%{opacity:1}100%{opacity:0}}
+@keyframes tvGlowIn{0%,45%{opacity:0;transform:scale(.6)}82%{opacity:1;transform:scale(1.4)}100%{opacity:1;transform:scale(1)}}
+@keyframes tvBreathe{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.18);opacity:1}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important}}
+</style>
+<style>
+body{margin:0}
+</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<script type="text/x-template" id="dc-tpl-LogoIntro">
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0E0F10}
+@keyframes tvSunArc{0%{offset-distance:0%;opacity:0}12%{opacity:1}100%{offset-distance:100%;opacity:1}}
+@keyframes tvSunColor{0%,30%{background-color:#CC9230}100%{background-color:var(--tv-accent)}}
+@keyframes tvGlowOut{0%,40%{opacity:1}100%{opacity:0}}
+@keyframes tvGlowIn{0%,45%{opacity:0;transform:scale(.6)}82%{opacity:1;transform:scale(1.4)}100%{opacity:1;transform:scale(1)}}
+@keyframes tvBreathe{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.18);opacity:1}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important}}
+</style>
+</helmet>
+<div style="width: 1200px; height: 720px; box-sizing: border-box; background: #0E0F10; color: #F2F3F4; font-family: 'Space Grotesk', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; position: relative; overflow: hidden">
+<div style="position: absolute; left: 40px; top: 36px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: #80868D">LOGO ANIMATION · SUN RISE</div>
+<div style="height: 460px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 56px">
+<sc-if value="{{show}}" hint-placeholder-val="{{true}}">
+<dc-import name="LogoMark" height="{{size}}" accent="{{accent}}" animate="{{yes}}" hint-size="538px,300px"></dc-import>
+<dc-import name="LogoWide" height="{{wideSize}}" accent="{{accent}}" animate="{{yes}}" hint-size="621px,110px"></dc-import>
+</sc-if>
+</div>
+<button type="button" onClick="{{replay}}" style="display: flex; gap: 10px; align-items: center; padding: 14px 24px; border-radius: 999px; border: 1px solid #4A4E53; background: #16181A; color: #F2F3F4; font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; cursor: pointer"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.5 8 A5.5 5.5 0 1 1 11.6 3.8" stroke="#F2F3F4" stroke-width="1.6"></path><path d="M12 1 V4.5 H8.5" stroke="#F2F3F4" stroke-width="1.6"></path></svg>Replay</button>
+</div>
+</script>
+<script type="text/x-template" id="dc-tpl-LogoMark">
+<helmet>
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="position: relative; width: {{w}}px; height: {{h}}px; --tv-accent: {{accent}}; font-family: 'Instrument Sans', system-ui, sans-serif; color: #F2F3F4">
+<img class="tv-logo-img" src="assets/df6bea644702c4c0bb9bb0257c17b18e.png" alt="Three Vistas" style="position: absolute; left: 0; top: 0; display: block; width: {{w}}px; height: {{h}}px">
+<div aria-hidden="true" style="position: absolute; left: 0; top: 0; width: {{d}}px; height: {{d}}px; offset-path: path('{{path}}'); offset-distance: 100%; offset-rotate: 0deg; offset-anchor: center; animation: {{arcAnim}}; pointer-events: none">
+<div style="position: absolute; left: {{go}}px; top: {{go}}px; width: {{g}}px; height: {{g}}px; border-radius: 50%; background: radial-gradient(circle, rgba(204,146,48,0.55) 0%, rgba(204,146,48,0.2) 32%, rgba(204,146,48,0) 68%); opacity: 0; animation: {{glowOutAnim}}"></div>
+<div style="position: absolute; left: {{go}}px; top: {{go}}px; width: {{g}}px; height: {{g}}px; border-radius: 50%; background: radial-gradient(circle, {{glow1}} 0%, {{glow2}} 32%, {{glow3}} 68%); animation: {{glowInAnim}}"></div>
+<div style="position: absolute; left: 0; top: 0; width: {{d}}px; height: {{d}}px; border-radius: 50%; background-color: {{accent}}; animation: {{colorAnim}}"></div>
+</div>
+</div>
+</script>
+<script type="text/x-template" id="dc-tpl-LogoWide">
+<helmet>
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="position: relative; width: {{w}}px; height: {{h}}px; --tv-accent: {{accent}}; font-family: 'Instrument Sans', system-ui, sans-serif; color: #F2F3F4">
+<img class="tv-logo-img" src="assets/5a49f74371841011da4d8cbf7a583be4.png" alt="Three Vistas" style="position: absolute; left: 0; top: 0; display: block; width: {{w}}px; height: {{h}}px">
+<div aria-hidden="true" style="position: absolute; left: 0; top: 0; width: {{d}}px; height: {{d}}px; offset-path: path('{{path}}'); offset-distance: 100%; offset-rotate: 0deg; offset-anchor: center; animation: {{arcAnim}}; pointer-events: none">
+<div style="position: absolute; left: {{go}}px; top: {{go}}px; width: {{g}}px; height: {{g}}px; border-radius: 50%; background: radial-gradient(circle, rgba(204,146,48,0.55) 0%, rgba(204,146,48,0.2) 32%, rgba(204,146,48,0) 68%); opacity: 0; animation: {{glowOutAnim}}"></div>
+<div style="position: absolute; left: {{go}}px; top: {{go}}px; width: {{g}}px; height: {{g}}px; border-radius: 50%; background: radial-gradient(circle, {{glow1}} 0%, {{glow2}} 32%, {{glow3}} 68%); animation: {{glowInAnim}}"></div>
+<div style="position: absolute; left: 0; top: 0; width: {{d}}px; height: {{d}}px; border-radius: 50%; background-color: {{accent}}; animation: {{colorAnim}}"></div>
+</div>
+</div>
+</script>
+<script>
+/* Minimal runtime for exported design pages: templates with {{holes}}, <sc-if>, <sc-for>, <dc-import>, and DCLogic components. */
+(function () {
+  'use strict';
+  var comps = {}, roots = [], instances = {}, seen = null, pendingMount = [], queued = false;
+
+  function DCLogic(props) { this.props = props || {}; this.state = {}; }
+  DCLogic.prototype.setState = function (p) {
+    if (typeof p === 'function') p = p(this.state, this.props);
+    if (p) for (var k in p) this.state[k] = p[k];
+    schedule();
+  };
+
+  function define(name, factory) { comps[name] = { factory: factory, cls: null, tpl: null }; }
+  function comp(name) {
+    var c = comps[name];
+    if (!c) throw new Error('Unknown component ' + name);
+    if (!c.cls) {
+      c.cls = c.factory(DCLogic);
+      var t = document.createElement('template');
+      t.innerHTML = document.getElementById('dc-tpl-' + name).textContent;
+      Array.prototype.forEach.call(t.content.querySelectorAll('helmet'), function (h) { h.remove(); });
+      var n = 0; (function walk(el) { for (var ch = el.firstChild; ch; ch = ch.nextSibling) { if (ch.nodeType === 1) { ch.__id = ++n; walk(ch.content || ch); } } })(t.content);
+      c.tpl = t.content;
+    }
+    return c;
+  }
+
+  function lookup(path, scope) {
+    path = path.trim();
+    if (path === 'true') return true; if (path === 'false') return false;
+    if (/^-?\d+(\.\d+)?$/.test(path)) return parseFloat(path);
+    var parts = path.split('.'), v, found = false;
+    for (var i = 0; i < scope.length; i++) { if (scope[i] && parts[0] in scope[i]) { v = scope[i][parts[0]]; found = true; break; } }
+    if (!found) return undefined;
+    for (var j = 1; j < parts.length && v != null; j++) v = v[parts[j]];
+    return v;
+  }
+  var HOLE = /\{\{([^}]+)\}\}/g, ONE = /^\{\{([^}]+)\}\}$/;
+  function interp(str, scope) {
+    var m = ONE.exec(str);
+    if (m) return lookup(m[1], scope);
+    return str.replace(HOLE, function (_, p) { var v = lookup(p, scope); return v == null ? '' : String(v); });
+  }
+
+  function disp(e) {
+    var h = e.currentTarget.__h && e.currentTarget.__h[e.type];
+    if (typeof h === 'function') { if (e.type === 'submit') e.preventDefault(); h(e); }
+  }
+  function evName(attr, el) {
+    var n = attr.slice(2).toLowerCase();
+    if (n === 'change' && (el.localName === 'input' || el.localName === 'textarea')) return 'input';
+    return n;
+  }
+  function listen(el, ev) { el.__evs = el.__evs || {}; if (!el.__evs[ev]) { el.__evs[ev] = 1; el.addEventListener(ev, disp); } }
+
+  function renderList(parent, scope, key, out) {
+    for (var ch = parent.firstChild; ch; ch = ch.nextSibling) renderNode(ch, scope, key, out);
+    return out;
+  }
+  function renderNode(node, scope, key, out) {
+    if (node.nodeType === 3) { out.push(document.createTextNode(interp(node.data, scope))); return; }
+    if (node.nodeType !== 1) return;
+    var tag = node.localName;
+    if (tag === 'helmet') return;
+    if (tag === 'sc-if') { if (lookup(node.getAttribute('value').replace(/^\{\{|\}\}$/g, ''), scope)) renderList(node, scope, key, out); return; }
+    if (tag === 'sc-for') {
+      var list = lookup(node.getAttribute('list').replace(/^\{\{|\}\}$/g, ''), scope) || [], as = node.getAttribute('as') || 'item';
+      for (var i = 0; i < list.length; i++) { var s = {}; s[as] = list[i]; renderList(node, [s].concat(scope), key + '.' + node.__id + ':' + i, out); }
+      return;
+    }
+    if (tag === 'dc-import') {
+      var name = node.getAttribute('name'), props = {};
+      for (var a = 0; a < node.attributes.length; a++) { var at = node.attributes[a]; if (at.name === 'name' || at.name.indexOf('hint-') === 0) continue; props[at.name] = interp(at.value, scope); }
+      var ik = key + '/' + node.__id + '@' + name, inst = instances[ik], c = comp(name);
+      if (!inst) { inst = new c.cls(props); inst.props = props; instances[ik] = inst; pendingMount.push(inst); }
+      inst.props = props; seen[ik] = 1;
+      renderList(c.tpl, [inst.renderVals() || {}], ik, out);
+      return;
+    }
+    var el = node.namespaceURI && node.namespaceURI !== 'http://www.w3.org/1999/xhtml' ? document.createElementNS(node.namespaceURI, tag) : document.createElement(tag);
+    for (var k = 0; k < node.attributes.length; k++) {
+      var at2 = node.attributes[k], nm = at2.name;
+      if (nm.indexOf('hint-') === 0) continue;
+      if (/^on[a-z]/.test(nm) && at2.value.indexOf('{{') < 0) { el.setAttribute(nm, at2.value); continue; }
+      if (/^on[a-z]/.test(nm)) { var fn = lookup(at2.value.replace(/^\{\{|\}\}$/g, ''), scope); if (typeof fn === 'function') { var ev = evName(nm, el); (el.__h = el.__h || {})[ev] = fn; listen(el, ev); } continue; }
+      var v = at2.value.indexOf('{{') < 0 ? at2.value : interp(at2.value, scope);
+      if (nm.indexOf('aria-') === 0) { if (v != null) el.setAttribute(nm, String(v)); continue; }
+      if (v === false || v == null) continue;
+      el.setAttributeNS(at2.namespaceURI || null, nm, v === true ? '' : String(v));
+    }
+    if (tag === 'video' && el.hasAttribute('muted')) el.muted = true;
+    renderList(node.content || node, scope, key, el.__kids = []);
+    for (var q = 0; q < el.__kids.length; q++) el.appendChild(el.__kids[q]);
+    out.push(el);
+  }
+
+  function same(a, b) { return a.nodeType === b.nodeType && (a.nodeType !== 1 || (a.localName === b.localName && a.namespaceURI === b.namespaceURI)); }
+  function patch(o, n) {
+    if (o.nodeType === 3) { if (o.data !== n.data) o.data = n.data; return; }
+    var i, keep = (o.localName === 'details') ? { open: 1 } : {};
+    for (i = o.attributes.length - 1; i >= 0; i--) { var an = o.attributes[i].name; if (!keep[an] && !n.hasAttribute(an)) o.removeAttribute(an); }
+    for (i = 0; i < n.attributes.length; i++) { var at = n.attributes[i]; if (keep[at.name]) continue; if (o.getAttribute(at.name) !== at.value) o.setAttribute(at.name, at.value); }
+    o.__h = n.__h; if (n.__evs) for (var ev in n.__evs) listen(o, ev);
+    if ((o.localName === 'input' || o.localName === 'textarea') && n.hasAttribute('value')) { var val = n.getAttribute('value'); if (o.value !== val && document.activeElement !== o) o.value = val; }
+    morph(o, Array.prototype.slice.call(n.childNodes));
+  }
+  function morph(parent, kids) {
+    for (var i = 0; i < kids.length; i++) {
+      var o = parent.childNodes[i], n = kids[i];
+      if (!o) parent.appendChild(n); else if (same(o, n)) patch(o, n); else parent.replaceChild(n, o);
+    }
+    while (parent.childNodes.length > kids.length) parent.removeChild(parent.lastChild);
+  }
+
+  function render() {
+    queued = false; seen = {};
+    roots.forEach(function (r) {
+      var c = comp(r.name); seen['root@' + r.name] = 1;
+      var out = renderList(c.tpl, [r.inst.renderVals() || {}], 'root@' + r.name, []);
+      morph(r.el, out);
+    });
+    for (var k in instances) if (!seen[k]) { var gone = instances[k]; delete instances[k]; if (gone.componentWillUnmount) try { gone.componentWillUnmount(); } catch (e) { console.error(e); } }
+    var m = pendingMount; pendingMount = [];
+    m.forEach(function (inst) { if (inst.componentDidMount) try { inst.componentDidMount(); } catch (e) { console.error(e); } });
+  }
+  function schedule() { if (!queued) { queued = true; (window.requestAnimationFrame || setTimeout)(render); } }
+
+  function mount(name, el, props) {
+    var c = comp(name), inst = new c.cls(props || {}); inst.props = props || {};
+    instances['root@' + name] = inst; roots.push({ name: name, el: el, inst: inst });
+    pendingMount.push(inst); render();
+  }
+  window.DC = { define: define, mount: mount, DCLogic: DCLogic };
+})();
+
+DC.define("LogoIntro", function (DCLogic) {
+
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { show: true };
+}
+componentWillUnmount() { clearTimeout(this.t); }
+renderVals() {
+return {
+accent: this.props.accent ?? '#D5F01F',
+size: 300,
+wideSize: 110,
+yes: true,
+show: this.state.show,
+replay: () => {
+this.setState({ show: false });
+clearTimeout(this.t);
+this.t = setTimeout(() => this.setState({ show: true }), 60);
+}
+};
+}
+}
+
+return Component;
+});
+DC.define("LogoMark", function (DCLogic) {
+
+class Component extends DCLogic {
+renderVals() {
+const h = this.props.height ?? 160;
+const a = this.props.accent ?? '#D5F01F';
+const animate = this.props.animate ?? true;
+const k = h / 478;
+const f = (n) => Math.round(n * k * 100) / 100;
+const d = f(50);
+const g = Math.round(d * 6 * 100) / 100;
+const go = Math.round(((d - g) / 2) * 100) / 100;
+const hex = a.replace('#', '');
+const r = parseInt(hex.substring(0, 2), 16) || 213;
+const gg = parseInt(hex.substring(2, 4), 16) || 240;
+const b = parseInt(hex.substring(4, 6), 16) || 31;
+const rgba = (al) => 'rgba(' + r + ',' + gg + ',' + b + ',' + al + ')';
+return {
+accent: a,
+w: f(857),
+h,
+d,
+g,
+go,
+path: 'M ' + f(-150) + ' ' + f(320) + ' Q ' + f(60) + ' ' + f(-150) + ' ' + f(345.5) + ' ' + f(80.5),
+glow1: rgba(0.6),
+glow2: rgba(0.22),
+glow3: rgba(0),
+arcAnim: animate ? 'tvSunArc 2.4s cubic-bezier(.35,.05,.2,1) .4s both' : 'none',
+colorAnim: animate ? 'tvSunColor 2.4s ease-in .4s both' : 'none',
+glowOutAnim: animate ? 'tvGlowOut 2.4s ease .4s both' : 'none',
+glowInAnim: animate ? 'tvGlowIn 2.6s ease-out .4s both, tvBreathe 4s ease-in-out 3.2s infinite' : 'none'
+};
+}
+}
+
+return Component;
+});
+DC.define("LogoWide", function (DCLogic) {
+
+class Component extends DCLogic {
+renderVals() {
+const h = this.props.height ?? 80;
+const a = this.props.accent ?? '#D5F01F';
+const animate = this.props.animate ?? true;
+const k = h / 120;
+const f = (n) => Math.round(n * k * 100) / 100;
+const d = f(12.5);
+const g = Math.round(d * 6 * 100) / 100;
+const go = Math.round(((d - g) / 2) * 100) / 100;
+const hex = a.replace('#', '');
+const r = parseInt(hex.substring(0, 2), 16) || 213;
+const gg = parseInt(hex.substring(2, 4), 16) || 240;
+const b = parseInt(hex.substring(4, 6), 16) || 31;
+const rgba = (al) => 'rgba(' + r + ',' + gg + ',' + b + ',' + al + ')';
+return {
+accent: a,
+w: f(677),
+h,
+d,
+g,
+go,
+path: 'M ' + f(-45) + ' ' + f(85) + ' Q ' + f(10) + ' ' + f(-35) + ' ' + f(86.66) + ' ' + f(20.16),
+glow1: rgba(0.6),
+glow2: rgba(0.22),
+glow3: rgba(0),
+arcAnim: animate ? 'tvSunArc 2.4s cubic-bezier(.35,.05,.2,1) .4s both' : 'none',
+colorAnim: animate ? 'tvSunColor 2.4s ease-in .4s both' : 'none',
+glowOutAnim: animate ? 'tvGlowOut 2.4s ease .4s both' : 'none',
+glowInAnim: animate ? 'tvGlowIn 2.6s ease-out .4s both, tvBreathe 4s ease-in-out 3.2s infinite' : 'none'
+};
+}
+}
+
+return Component;
+});
+DC.mount("LogoIntro", document.getElementById('dc-root'), {});
+</script>
+</body>
+</html>
