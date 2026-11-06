@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact — Three Vistas</title>
 <link rel="canonical" href="https://threevistas.com/contact.html">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#0E0F10">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Three Vistas">
@@ -204,6 +204,50 @@ svg[style*="inset: 28px"]{display:none}
 .tv-faq[open] .tv-plus{transform:rotate(45deg)}
 .tv-plus{transition:transform .2s ease}
 .tv-card-link:hover{border-color:var(--tv-acc-line,#D5F01F) !important}
+
+/* Formspree AJAX feedback states */
+[data-fs-error],
+[data-fs-success] {
+  display: none;
+}
+
+[data-fs-error][data-fs-active],
+[data-fs-success][data-fs-active] {
+  display: block !important;
+}
+
+[data-fs-error=""][data-fs-active] {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(255, 107, 107, 0.15) !important;
+  border: 1px solid #FF6B6B !important;
+  color: #FFB4B4 !important;
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+[data-fs-success][data-fs-active] {
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: rgba(213, 240, 31, 0.15) !important;
+  border: 1px solid var(--tv-acc-line, #D5F01F) !important;
+  color: #FFFFFF !important;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.5;
+}
+
+[data-fs-error]:not([data-fs-error=""])[data-fs-active] {
+  color: #FF6B6B !important;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+[data-fs-field][aria-invalid="true"] {
+  border-color: #FF6B6B !important;
+}
 </style>
 <style>
 body{margin:0}
@@ -345,6 +389,50 @@ svg[style*="inset: 28px"]{display:none}
 .tv-faq[open] .tv-plus{transform:rotate(45deg)}
 .tv-plus{transition:transform .2s ease}
 .tv-card-link:hover{border-color:var(--tv-acc-line,#D5F01F) !important}
+
+/* Formspree AJAX feedback states */
+[data-fs-error],
+[data-fs-success] {
+  display: none;
+}
+
+[data-fs-error][data-fs-active],
+[data-fs-success][data-fs-active] {
+  display: block !important;
+}
+
+[data-fs-error=""][data-fs-active] {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(255, 107, 107, 0.15) !important;
+  border: 1px solid #FF6B6B !important;
+  color: #FFB4B4 !important;
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+[data-fs-success][data-fs-active] {
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: rgba(213, 240, 31, 0.15) !important;
+  border: 1px solid var(--tv-acc-line, #D5F01F) !important;
+  color: #FFFFFF !important;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.5;
+}
+
+[data-fs-error]:not([data-fs-error=""])[data-fs-active] {
+  color: #FF6B6B !important;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+[data-fs-field][aria-invalid="true"] {
+  border-color: #FF6B6B !important;
+}
 </style>
 </helmet>
 <div class="tv-root" data-theme="{{theme}}" style="--tv-acc-text: {{accText}}; --tv-acc-line: {{accLine}}; width: 100%; min-width: 1200px; box-sizing: border-box; background: var(--t0E0F10, #0E0F10); color: var(--tF2F3F4, #F2F3F4); display: flex; flex-direction: column; position: relative">
@@ -422,20 +510,23 @@ svg[style*="inset: 28px"]{display:none}
 <!-- Book or write -->
 <section style="padding: 0 64px 96px; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px; align-items: stretch">
 <dc-import name="Scheduler" accent="{{accent}}" hint-size="100%,640px"></dc-import>
-<form action="https://formsubmit.co/sam@threevistas.com" method="POST" style="padding: 36px; border-radius: 22px; background: var(--t0E0F10, #0E0F10); border: 1px solid var(--t2A2C2F, #2A2C2F); display: flex; flex-direction: column; gap: 16px"><input type="hidden" name="_cc" value="seo@threevistas.com,samchontos@gmail.com"><input type="hidden" name="_subject" value="New website lead: Contact form"><input type="hidden" name="_next" value="https://threevistas.com/thank-you.html?form=contact"><input type="hidden" name="_template" value="table"><input type="hidden" name="lead_type" value="Contact form"><input type="hidden" name="page" value="https://threevistas.com/contact.html"><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none">
+<form id="my-form" style="padding: 36px; border-radius: 22px; background: var(--t0E0F10, #0E0F10); border: 1px solid var(--t2A2C2F, #2A2C2F); display: flex; flex-direction: column; gap: 16px">
+<div data-fs-success style="padding: 14px 18px; border-radius: 10px; background: rgba(213, 240, 31, 0.15); border: 1px solid var(--tv-accent, {{accent}}); color: #FFFFFF; font-size: 15px; font-weight: 500; text-align: center; line-height: 1.5">Thanks for your submission! We’ll reply within one business day.</div>
+<div data-fs-error style="padding: 14px 18px; border-radius: 10px; background: rgba(255, 107, 107, 0.15); border: 1px solid #FF6B6B; color: #FFB4B4; font-size: 14px; text-align: center; line-height: 1.5">Oops! There was a problem submitting your form.</div>
+<input type="hidden" name="lead_type" value="Contact form">
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: var(--tA2A7AD, #A2A7AD)">OR · TELL US ABOUT YOUR PROJECT</span>
 <h3 style="font-size: 26px; line-height: 1.15; letter-spacing: -0.01em; font-weight: 600">We’ll reply within one business day.</h3>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
-<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 500">Full name<input name="full_name" type="text" placeholder="Jordan Lee" style="height: 48px; box-sizing: border-box; padding: 0 14px; border-radius: 10px; border: 1px solid var(--t3A3D41, #3A3D41); background: var(--t16181A, #16181A); color: var(--tF2F3F4, #F2F3F4); font: inherit; font-size: 15px"></label>
-<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 500">Work email<input name="work_email" type="email" required placeholder="jordan@company.com" style="height: 48px; box-sizing: border-box; padding: 0 14px; border-radius: 10px; border: 1px solid var(--t3A3D41, #3A3D41); background: var(--t16181A, #16181A); color: var(--tF2F3F4, #F2F3F4); font: inherit; font-size: 15px"></label>
+<label for="contact-name" style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 500">Full name<input id="contact-name" name="full_name" type="text" placeholder="Jordan Lee" data-fs-field style="height: 48px; box-sizing: border-box; padding: 0 14px; border-radius: 10px; border: 1px solid var(--t3A3D41, #3A3D41); background: var(--t16181A, #16181A); color: var(--tF2F3F4, #F2F3F4); font: inherit; font-size: 15px"><span data-fs-error="full_name"></span></label>
+<label for="contact-email" style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 500">Work email<input id="contact-email" name="email" type="email" required placeholder="jordan@company.com" data-fs-field style="height: 48px; box-sizing: border-box; padding: 0 14px; border-radius: 10px; border: 1px solid var(--t3A3D41, #3A3D41); background: var(--t16181A, #16181A); color: var(--tF2F3F4, #F2F3F4); font: inherit; font-size: 15px"><span data-fs-error="email"></span></label>
 </div>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
-<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 500">Company<input name="company" type="text" placeholder="Company name" style="height: 48px; box-sizing: border-box; padding: 0 14px; border-radius: 10px; border: 1px solid var(--t3A3D41, #3A3D41); background: var(--t16181A, #16181A); color: var(--tF2F3F4, #F2F3F4); font: inherit; font-size: 15px"></label>
-<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 500">Company size<select name="company_size" style="height: 48px; box-sizing: border-box; padding: 0 12px; border-radius: 10px; border: 1px solid var(--t3A3D41, #3A3D41); background: var(--t16181A, #16181A); color: var(--tF2F3F4, #F2F3F4); font: inherit; font-size: 15px"><option>200–1,000 employees</option><option>1,000–5,000 employees</option><option>5,000+ employees</option><option>Under 200 employees</option></select></label>
+<label for="contact-company" style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 500">Company<input id="contact-company" name="company" type="text" placeholder="Company name" data-fs-field style="height: 48px; box-sizing: border-box; padding: 0 14px; border-radius: 10px; border: 1px solid var(--t3A3D41, #3A3D41); background: var(--t16181A, #16181A); color: var(--tF2F3F4, #F2F3F4); font: inherit; font-size: 15px"><span data-fs-error="company"></span></label>
+<label for="contact-company-size" style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 500">Company size<select id="contact-company-size" name="company_size" data-fs-field style="height: 48px; box-sizing: border-box; padding: 0 12px; border-radius: 10px; border: 1px solid var(--t3A3D41, #3A3D41); background: var(--t16181A, #16181A); color: var(--tF2F3F4, #F2F3F4); font: inherit; font-size: 15px"><option>200–1,000 employees</option><option>1,000–5,000 employees</option><option>5,000+ employees</option><option>Under 200 employees</option></select><span data-fs-error="company_size"></span></label>
 </div>
-<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 500">Top priority<select name="top_priority" style="height: 48px; box-sizing: border-box; padding: 0 12px; border-radius: 10px; border: 1px solid var(--t3A3D41, #3A3D41); background: var(--t16181A, #16181A); color: var(--tF2F3F4, #F2F3F4); font: inherit; font-size: 15px"><option>AI strategy &amp; roadmap</option><option>AI integration &amp; automation</option><option>AI-powered marketing</option><option>AI search visibility</option><option>Enterprise web platform</option></select></label>
-<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 500">What are you hoping AI will change?<textarea name="what_are_you_hoping_ai_will_change" rows="3" placeholder="A sentence or two is plenty" style="box-sizing: border-box; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--t3A3D41, #3A3D41); background: var(--t16181A, #16181A); color: var(--tF2F3F4, #F2F3F4); font: inherit; font-size: 15px; resize: none"></textarea></label>
-<button type="submit" style="height: 54px; border: 1px solid var(--t4A4E53, #4A4E53); border-radius: 999px; background: transparent; color: var(--tF2F3F4, #F2F3F4); font-size: 16px; font-weight: 600; cursor: pointer">Send my request</button>
+<label for="contact-priority" style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 500">Top priority<select id="contact-priority" name="top_priority" data-fs-field style="height: 48px; box-sizing: border-box; padding: 0 12px; border-radius: 10px; border: 1px solid var(--t3A3D41, #3A3D41); background: var(--t16181A, #16181A); color: var(--tF2F3F4, #F2F3F4); font: inherit; font-size: 15px"><option>AI strategy &amp; roadmap</option><option>AI integration &amp; automation</option><option>AI-powered marketing</option><option>AI search visibility</option><option>Enterprise web platform</option></select><span data-fs-error="top_priority"></span></label>
+<label for="contact-message" style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 500">What are you hoping AI will change?<textarea id="contact-message" name="message" rows="3" placeholder="A sentence or two is plenty" data-fs-field style="box-sizing: border-box; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--t3A3D41, #3A3D41); background: var(--t16181A, #16181A); color: var(--tF2F3F4, #F2F3F4); font: inherit; font-size: 15px; resize: none"></textarea><span data-fs-error="message"></span></label>
+<button type="submit" data-fs-submit-btn style="height: 54px; border: 1px solid var(--t4A4E53, #4A4E53); border-radius: 999px; background: transparent; color: var(--tF2F3F4, #F2F3F4); font-size: 16px; font-weight: 600; cursor: pointer">Send my request</button>
 <span style="font-size: 13px; color: var(--tA2A7AD, #A2A7AD); text-align: center">After you submit, you can pick a meeting time right away.</span>
 </form>
 </section>
@@ -533,20 +624,26 @@ body{margin:0}
 <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 30px; line-height: 1.1; letter-spacing: -0.02em; font-weight: 600; color: var(--tv-acc-text, {{accent}})">AI Strategy Session</h3>
 <div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: var(--tCDD0D4, #CDD0D4)">
 <span style="display: flex; gap: 10px; align-items: center"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7" stroke="var(--tv-acc-text, {{accent}})" stroke-width="1.6"></circle><path d="M9 5 V9 L12 11" stroke="var(--tv-acc-text, {{accent}})" stroke-width="1.6"></path></svg>30 minutes</span>
-<span style="display: flex; gap: 10px; align-items: center"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="1.5" y="4.5" width="10" height="9" rx="2" stroke="var(--tv-acc-text, {{accent}})" stroke-width="1.6"></rect><path d="M11.5 8 L16.5 5 V13 L11.5 10" stroke="var(--tv-acc-text, {{accent}})" stroke-width="1.6" stroke-linejoin="round"></path></svg>Video call · link sent on booking</span>
+<span style="display: flex; gap: 10px; align-items: center"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="1.5" y="4.5" width="10" height="9" rx="2" stroke="var(--tv-acc-text, {{accent}})" stroke-width="1.6"></rect><path d="M11.5 8 L16.5 5 V13 L11.5 10" stroke="var(--tv-acc-text, {{accent}})" stroke-width="1.6" stroke-linejoin="round"></path></svg>Video call · Google Meet link</span>
 <span style="display: flex; gap: 10px; align-items: center"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="6" r="3.2" stroke="var(--tv-acc-text, {{accent}})" stroke-width="1.6"></circle><path d="M2.5 16 C3.5 12 14.5 12 15.5 16" stroke="var(--tv-acc-text, {{accent}})" stroke-width="1.6"></path></svg>With a senior AI strategist</span>
 </div>
-<p style="margin: 0; font-size: 14px; line-height: 1.6; color: var(--tA2A7AD, #A2A7AD)">Choose a time that works. You’ll get a calendar invite and a short prep questionnaire.</p>
+<p style="margin: 0; font-size: 14px; line-height: 1.6; color: var(--tA2A7AD, #A2A7AD)">Choose a time that works. Automatically creates a Google Calendar event and Google Meet link.</p>
 <div style="margin-top: auto; padding: 14px 16px; border-radius: 12px; background: var(--t1A1C1E, #1A1C1E); border: 1px solid var(--tv-acc-line, {{accent}}); display: flex; flex-direction: column; gap: 4px">
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: var(--t80868D, #80868D)">YOUR SELECTION</span>
 <span style="font-size: 15px; font-weight: 600">{{summary}}</span>
 </div>
-<span style="font-size: 12px; color: var(--t80868D, #80868D)">Scheduling by Calendly</span>
+<span style="font-size: 12px; color: var(--t80868D, #80868D)">Google Calendar &amp; Meet auto-booking</span>
 </div>
+<div style="position: relative; display: flex; flex-direction: column">
+<sc-if value="{{isSelect}}" hint-placeholder-val="{{true}}">
 <div style="padding: 32px; display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; justify-content: space-between; align-items: center">
 <span style="font-size: 16px; font-weight: 600">Select a date &amp; time</span>
-<span style="font-size: 14px; color: var(--tA2A7AD, #A2A7AD)">October 2026</span>
+<div style="display: flex; align-items: center; gap: 8px">
+<button type="button" onClick="{{prevMonth}}" disabled="{{prevDisabled}}" aria-label="Previous month" style="border: 0; background: transparent; color: {{prevColor}}; font-size: 18px; line-height: 1; cursor: {{prevCursor}}; padding: 2px 6px">‹</button>
+<span style="font-size: 14px; color: var(--tA2A7AD, #A2A7AD); font-weight: 500">{{monthYear}}</span>
+<button type="button" onClick="{{nextMonth}}" aria-label="Next month" style="border: 0; background: transparent; color: var(--tF2F3F4, #F2F3F4); font-size: 18px; line-height: 1; cursor: pointer; padding: 2px 6px">›</button>
+</div>
 </div>
 <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; text-align: center">
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--t80868D, #80868D)">SUN</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--t80868D, #80868D)">MON</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--t80868D, #80868D)">TUE</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--t80868D, #80868D)">WED</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--t80868D, #80868D)">THU</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--t80868D, #80868D)">FRI</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--t80868D, #80868D)">SAT</span>
@@ -560,7 +657,69 @@ body{margin:0}
 <button type="button" onClick="{{t.pick}}" style="height: 44px; border-radius: 10px; border: 1px solid var(--tv-acc-line, {{accent}}); background: {{t.bg}}; color: {{t.fg}}; font-family: 'Instrument Sans', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer">{{t.label}}</button>
 </sc-for>
 </div>
-<a href="#" style="margin-top: 4px; height: 52px; border-radius: 999px; background: {{accent}}; color: #0E0F10; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Confirm&nbsp;{{slotLabel}}&nbsp;→</a>
+<sc-if value="{{hasWebhook}}" hint-placeholder-val="{{false}}">
+<button type="button" onClick="{{goToDetails}}" style="margin-top: 4px; height: 52px; border: 0; border-radius: 999px; background: {{accent}}; color: #0E0F10; font-family: inherit; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; cursor: pointer">Confirm&nbsp;{{slotLabel}}&nbsp;→</button>
+</sc-if>
+<sc-if value="{{noWebhook}}" hint-placeholder-val="{{true}}">
+<a href="{{gcalUrl}}" target="_blank" rel="noopener noreferrer" style="margin-top: 4px; height: 52px; border-radius: 999px; background: {{accent}}; color: #0E0F10; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Confirm&nbsp;{{slotLabel}}&nbsp;→</a
+></sc-if>
+</div>
+</sc-if>
+<sc-if value="{{isDetails}}" hint-placeholder-val="{{false}}">
+<form onSubmit="{{submitBooking}}" style="padding: 32px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="font-size: 16px; font-weight: 600">Enter your details</span>
+<button type="button" onClick="{{backToSelect}}" style="border: 0; background: transparent; color: var(--tv-acc-text, {{accent}}); font-size: 13px; font-family: inherit; cursor: pointer; padding: 4px 0">← Change time</button>
+</div>
+<div style="padding: 10px 14px; border-radius: 10px; background: var(--t16181A, #16181A); border: 1px solid var(--t2A2C2F, #2A2C2F); display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--tCDD0D4, #CDD0D4)">
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="12" rx="2" stroke="var(--tv-acc-text, {{accent}})" stroke-width="1.6"></rect><path d="M1.5 6.5 H14.5 M5 1 V4 M11 1 V4" stroke="var(--tv-acc-text, {{accent}})" stroke-width="1.6"></path></svg>
+<span>{{summary}} (Eastern Time)</span>
+</div>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 500">Full name *<input name="book_name" type="text" required placeholder="Jordan Lee" value="{{valName}}" onInput="{{onNameInput}}" style="height: 44px; box-sizing: border-box; padding: 0 14px; border-radius: 10px; border: 1px solid var(--t3A3D41, #3A3D41); background: var(--t16181A, #16181A); color: var(--tF2F3F4, #F2F3F4); font: inherit; font-size: 14px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 500">Work email (for Google Meet invite) *<input name="book_email" type="email" required placeholder="jordan@company.com" value="{{valEmail}}" onInput="{{onEmailInput}}" style="height: 44px; box-sizing: border-box; padding: 0 14px; border-radius: 10px; border: 1px solid var(--t3A3D41, #3A3D41); background: var(--t16181A, #16181A); color: var(--tF2F3F4, #F2F3F4); font: inherit; font-size: 14px"></label>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 500">Company<input name="book_company" type="text" placeholder="Company name" value="{{valCompany}}" onInput="{{onCompanyInput}}" style="height: 44px; box-sizing: border-box; padding: 0 14px; border-radius: 10px; border: 1px solid var(--t3A3D41, #3A3D41); background: var(--t16181A, #16181A); color: var(--tF2F3F4, #F2F3F4); font: inherit; font-size: 14px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 500">Phone (optional)<input name="book_phone" type="tel" placeholder="+1 (555) 000-0000" value="{{valPhone}}" onInput="{{onPhoneInput}}" style="height: 44px; box-sizing: border-box; padding: 0 14px; border-radius: 10px; border: 1px solid var(--t3A3D41, #3A3D41); background: var(--t16181A, #16181A); color: var(--tF2F3F4, #F2F3F4); font: inherit; font-size: 14px"></label>
+</div>
+<sc-if value="{{hasError}}" hint-placeholder-val="{{false}}">
+<span style="font-size: 12px; color: #FF6B6B">{{errorMsg}}</span>
+</sc-if>
+<button type="submit" style="margin-top: 4px; height: 50px; border: 0; border-radius: 999px; background: {{accent}}; color: #0E0F10; font-family: inherit; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="12" rx="2" stroke="#0E0F10" stroke-width="1.6"></rect><path d="M1.5 6.5 H14.5 M5 1 V4 M11 1 V4" stroke="#0E0F10" stroke-width="1.6"></path></svg>Book Google Meet Call →</button>
+</form>
+</sc-if>
+<sc-if value="{{isSubmitting}}" hint-placeholder-val="{{false}}">
+<div style="padding: 64px 32px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; text-align: center">
+<div class="tv-pulse" style="width: 52px; height: 52px; border-radius: 50%; background: {{accent}}; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 V6 M12 18 V22 M6 12 H2 M22 12 H18 M4.9 4.9 L7.8 7.8 M16.2 16.2 L19.1 19.1 M4.9 19.1 L7.8 16.2 M16.2 7.8 L19.1 4.9" stroke="#0E0F10" stroke-width="2.2" stroke-linecap="round"></path></svg>
+</div>
+<h4 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600">Booking your Google Meet session...</h4>
+<p style="margin: 0; font-size: 14px; color: var(--tA2A7AD, #A2A7AD)">Adding event to Google Calendar and generating video link.</p>
+</div>
+</sc-if>
+<sc-if value="{{isConfirmed}}" hint-placeholder-val="{{false}}">
+<div style="padding: 36px 32px; display: flex; flex-direction: column; gap: 18px; box-sizing: border-box">
+<div style="display: flex; align-items: center; gap: 14px">
+<div style="width: 44px; height: 44px; border-radius: 50%; background: {{accent}}; display: flex; align-items: center; justify-content: center; flex-shrink: 0">
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5 L8 14.5 L16 5.5" stroke="#0E0F10" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<div style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600">You're scheduled!</span>
+<span style="font-size: 13px; color: var(--tv-acc-text, {{accent}})">Google Meet video call confirmed</span>
+</div>
+</div>
+<div style="padding: 16px; border-radius: 12px; background: var(--t16181A, #16181A); border: 1px solid var(--t2A2C2F, #2A2C2F); display: flex; flex-direction: column; gap: 10px; font-size: 14px">
+<div style="display: flex; justify-content: space-between"><span style="color: var(--t80868D, #80868D)">Event</span><span style="font-weight: 600">AI Strategy Session (30 min)</span></div>
+<div style="display: flex; justify-content: space-between"><span style="color: var(--t80868D, #80868D)">Time</span><span style="font-weight: 600">{{confirmedTime}}</span></div>
+<div style="display: flex; justify-content: space-between"><span style="color: var(--t80868D, #80868D)">Location</span><span style="color: var(--tv-acc-text, {{accent}}); font-weight: 600">Google Meet</span></div>
+<div style="display: flex; justify-content: space-between"><span style="color: var(--t80868D, #80868D)">Guest</span><span style="color: var(--tCDD0D4, #CDD0D4)">{{valEmail}}</span></div>
+</div>
+<p style="margin: 0; font-size: 13px; line-height: 1.55; color: var(--tA2A7AD, #A2A7AD)">A calendar invitation with the Google Meet link has been sent to {{valEmail}}.</p>
+<div style="display: flex; gap: 10px; flex-wrap: wrap">
+<a href="{{gcalUrl}}" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 160px; height: 46px; border-radius: 999px; background: {{accent}}; color: #0E0F10; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="12" rx="2" stroke="#0E0F10" stroke-width="1.6"></rect><path d="M1.5 6.5 H14.5 M5 1 V4 M11 1 V4" stroke="#0E0F10" stroke-width="1.6"></path></svg>Open Google Calendar</a>
+<button type="button" onClick="{{resetBooking}}" style="height: 46px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--t4A4E53, #4A4E53); background: transparent; color: var(--tF2F3F4, #F2F3F4); font-family: inherit; font-size: 14px; cursor: pointer">Book another</button>
+</div>
+</div>
+</sc-if>
 </div>
 </div>
 </script>
@@ -867,33 +1026,83 @@ glowInAnim: animate ? 'tvGlowIn 2.6s ease-out .4s both, tvBreathe 4s ease-in-out
 
 return Component;
 });
+// Google Apps Script Web App URL for auto-booking Google Calendar & Google Meet
+// Deploy google-apps-script.js and paste your Web App URL below:
+window.TV_GOOGLE_MEET_WEBHOOK = window.TV_GOOGLE_MEET_WEBHOOK || "https://script.google.com/macros/s/AKfycbyQ3TLh6l8_vXKNz_9w407vTNTbuwr0YOv_oyaMU22-yIh75JKXBTPAQM0NlY87ZEXg/exec";
+
 DC.define("Scheduler", function (DCLogic) {
+
+function getInitialBookingDate() {
+  const d = new Date();
+  if (d.getHours() >= 16) d.setDate(d.getDate() + 1);
+  while (d.getDay() === 0 || d.getDay() === 6) d.setDate(d.getDate() + 1);
+  return {
+    year: d.getFullYear(),
+    month: d.getMonth(),
+    day: d.getDate()
+  };
+}
 
 class Component extends DCLogic {
 constructor(props) {
 super(props);
-this.state = { day: 6, slot: 1 };
+const init = getInitialBookingDate();
+this.state = {
+step: 'select',
+year: init.year,
+month: init.month,
+day: init.day,
+slot: 1,
+name: '',
+email: '',
+company: '',
+phone: '',
+error: '',
+confirmedTime: ''
+};
 }
 renderVals() {
 const a = this.props.accent ?? '#D5F01F';
-const open = [2, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23];
-const names = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const year = this.state.year;
+const month = this.state.month;
+const today = new Date();
+const todayDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
+const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const monthShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const dayShort = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+const firstDayIndex = new Date(year, month, 1).getDay();
+const totalDaysInMonth = new Date(year, month + 1, 0).getDate();
+
 const days = [];
-for (let i = 0; i < 4; i++) days.push({ label: '', disabled: true, bg: 'transparent', fg: 'transparent', weight: 400, cursor: 'default', aria: 'blank', pick: null });
-for (let d = 1; d <= 24; d++) {
-const avail = open.indexOf(d) >= 0;
-const sel = d === this.state.day;
-days.push({
-label: String(d),
-disabled: !avail,
-bg: sel ? a : (avail ? 'var(--t26292C, #26292C)' : 'transparent'),
-fg: sel ? '#0E0F10' : (avail ? 'var(--tF2F3F4, #F2F3F4)' : 'var(--t5F646A, #5F646A)'),
-weight: sel || avail ? 700 : 400,
-cursor: avail ? 'pointer' : 'default',
-aria: 'October ' + d + (avail ? '' : ', unavailable'),
-pick: () => this.setState({ day: d })
-});
+for (let i = 0; i < firstDayIndex; i++) {
+  days.push({ label: '', disabled: true, bg: 'transparent', fg: 'transparent', weight: 400, cursor: 'default', aria: 'blank', pick: null });
 }
+
+for (let d = 1; d <= totalDaysInMonth; d++) {
+  const dateObj = new Date(year, month, d);
+  const dow = dateObj.getDay();
+  const isWeekday = dow >= 1 && dow <= 5;
+  const isPast = dateObj < todayDate;
+  const isToday = dateObj.getTime() === todayDate.getTime();
+  const isPastHours = isToday && today.getHours() >= 16;
+  const avail = isWeekday && !isPast && !isPastHours;
+
+  const sel = (d === this.state.day);
+  days.push({
+    label: String(d),
+    disabled: !avail,
+    bg: sel ? a : (avail ? 'var(--t26292C, #26292C)' : 'transparent'),
+    fg: sel ? '#0E0F10' : (avail ? 'var(--tF2F3F4, #F2F3F4)' : 'var(--t5F646A, #5F646A)'),
+    weight: sel || avail ? 700 : 400,
+    cursor: avail ? 'pointer' : 'default',
+    aria: monthNames[month] + ' ' + d + (avail ? '' : ', unavailable'),
+    pick: avail ? () => this.setState({ day: d, error: '' }) : null
+  });
+}
+
 const times = ['9:30 am', '11:00 am', '1:00 pm', '2:30 pm', '3:30 pm', '4:30 pm'];
 const slots = times.map((label, i) => ({
 label,
@@ -901,15 +1110,180 @@ bg: i === this.state.slot ? a : 'transparent',
 fg: i === this.state.slot ? '#0E0F10' : 'var(--tF2F3F4, #F2F3F4)',
 pick: () => this.setState({ slot: i })
 }));
-const wd = names[(4 + this.state.day - 1) % 7];
-const dayLong = wd + ', October ' + this.state.day;
+
+const selDate = new Date(year, month, this.state.day);
+const selDow = selDate.getDay();
+const wd = dayNames[selDow] || 'Tuesday';
+const wdShort = dayShort[selDow] || 'Tue';
+const mName = monthNames[month] || 'October';
+const mShort = monthShort[month] || 'Oct';
+
+const dayLong = wd + ', ' + mName + ' ' + this.state.day;
+const slotLabel = times[this.state.slot] || '11:00 am';
+const summary = wdShort + ', ' + mShort + ' ' + this.state.day + ' · ' + slotLabel;
+const monthYear = mName + ' ' + year;
+
+const slotTimes = [
+{ s: '093000', e: '100000', h: 9, m: 30 },
+{ s: '110000', e: '113000', h: 11, m: 0 },
+{ s: '130000', e: '133000', h: 13, m: 0 },
+{ s: '143000', e: '150000', h: 14, m: 30 },
+{ s: '153000', e: '160000', h: 15, m: 30 },
+{ s: '163000', e: '170000', h: 16, m: 30 }
+];
+const st = slotTimes[this.state.slot] || slotTimes[1];
+const pad = (n) => (n < 10 ? '0' : '') + n;
+const dStr = String(year) + pad(month + 1) + pad(this.state.day);
+const gcalUrl = window.TV_GCAL_SCHEDULE_URL || ('https://calendar.google.com/calendar/render?action=TEMPLATE' +
+'&text=' + encodeURIComponent('AI Strategy Session with Three Vistas') +
+'&dates=' + dStr + 'T' + st.s + '/' + dStr + 'T' + st.e +
+'&ctz=America/New_York' +
+'&details=' + encodeURIComponent('30-minute AI Strategy Session with Three Vistas.\nVideo call via Google Meet.') +
+'&location=' + encodeURIComponent('Google Meet'));
+
+const hasWebhook = Boolean(window.TV_GOOGLE_MEET_WEBHOOK);
+
+const isCurrentMonth = (year === today.getFullYear() && month === today.getMonth());
+const prevDisabled = isCurrentMonth;
+const prevColor = prevDisabled ? 'var(--t5F646A, #5F646A)' : 'var(--tF2F3F4, #F2F3F4)';
+const prevCursor = prevDisabled ? 'default' : 'pointer';
+
+const prevMonth = () => {
+  if (prevDisabled) return;
+  let newMonth = this.state.month - 1;
+  let newYear = this.state.year;
+  if (newMonth < 0) {
+    newMonth = 11;
+    newYear--;
+  }
+  const d = new Date(newYear, newMonth, 1);
+  while (d.getDay() === 0 || d.getDay() === 6) d.setDate(d.getDate() + 1);
+  this.setState({ year: newYear, month: newMonth, day: d.getDate(), error: '' });
+};
+
+const nextMonth = () => {
+  let newMonth = this.state.month + 1;
+  let newYear = this.state.year;
+  if (newMonth > 11) {
+    newMonth = 0;
+    newYear++;
+  }
+  const d = new Date(newYear, newMonth, 1);
+  while (d.getDay() === 0 || d.getDay() === 6) d.setDate(d.getDate() + 1);
+  this.setState({ year: newYear, month: newMonth, day: d.getDate(), error: '' });
+};
+
+const goToDetails = () => {
+this.setState({ step: 'details', error: '' });
+};
+
+const backToSelect = () => {
+this.setState({ step: 'select', error: '' });
+};
+
+const resetBooking = () => {
+const init = getInitialBookingDate();
+this.setState({
+step: 'select',
+year: init.year,
+month: init.month,
+day: init.day,
+slot: 1,
+name: '',
+email: '',
+company: '',
+phone: '',
+error: '',
+confirmedTime: ''
+});
+};
+
+const submitBooking = (e) => {
+if (e && e.preventDefault) e.preventDefault();
+const name = (this.state.name || '').trim();
+const email = (this.state.email || '').trim();
+if (!name) {
+this.setState({ error: 'Please enter your full name.' });
+return;
+}
+if (!email || email.indexOf('@') < 1 || email.indexOf('.') < 3) {
+this.setState({ error: 'Please enter a valid work email address.' });
+return;
+}
+
+const formattedConfirmed = summary + ', ' + year;
+this.setState({ step: 'submitting', error: '' });
+
+const webhook = window.TV_GOOGLE_MEET_WEBHOOK || '';
+const payload = {
+name: name,
+email: email,
+company: (this.state.company || '').trim(),
+phone: (this.state.phone || '').trim(),
+summary: summary,
+dayLong: dayLong,
+timeSlot: slotLabel,
+year: year,
+month: month + 1,
+day: this.state.day,
+timeZone: 'America/New_York',
+startIso: new Date(Date.UTC(year, month, this.state.day, st.h + 4, st.m)).toISOString(),
+endIso: new Date(Date.UTC(year, month, this.state.day, st.h + 4, st.m + 30)).toISOString()
+};
+
+if (webhook) {
+fetch(webhook, {
+method: 'POST',
+mode: 'no-cors',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify(payload)
+}).then(() => {
+this.setState({ step: 'confirmed', confirmedTime: formattedConfirmed });
+}).catch(() => {
+this.setState({ step: 'confirmed', confirmedTime: formattedConfirmed });
+});
+} else {
+setTimeout(() => {
+this.setState({ step: 'confirmed', confirmedTime: formattedConfirmed });
+}, 800);
+}
+};
+
 return {
 accent: a,
+monthYear,
+prevDisabled,
+prevColor,
+prevCursor,
+prevMonth,
+nextMonth,
+isSelect: this.state.step === 'select',
+isDetails: this.state.step === 'details',
+isSubmitting: this.state.step === 'submitting',
+isConfirmed: this.state.step === 'confirmed',
+hasWebhook: hasWebhook,
+noWebhook: !hasWebhook,
 days,
 slots,
 dayLong,
-slotLabel: times[this.state.slot],
-summary: wd.slice(0, 3) + ', Oct ' + this.state.day + ' · ' + times[this.state.slot]
+slotLabel,
+summary,
+gcalUrl,
+valName: this.state.name || '',
+valEmail: this.state.email || '',
+valCompany: this.state.company || '',
+valPhone: this.state.phone || '',
+hasError: Boolean(this.state.error),
+errorMsg: this.state.error || '',
+confirmedTime: this.state.confirmedTime || (summary + ', ' + year),
+goToDetails,
+backToSelect,
+resetBooking,
+submitBooking,
+onNameInput: (e) => this.setState({ name: e.target.value, error: '' }),
+onEmailInput: (e) => this.setState({ email: e.target.value, error: '' }),
+onCompanyInput: (e) => this.setState({ company: e.target.value }),
+onPhoneInput: (e) => this.setState({ phone: e.target.value })
 };
 }
 }
@@ -956,5 +1330,18 @@ return Component;
 });
 DC.mount("contact", document.getElementById('dc-root'), {});
 </script>
+<!-- Formspree AJAX integration -->
+<script>
+  window.formspree =
+    window.formspree ||
+    function () {
+      (formspree.q = formspree.q || []).push(arguments);
+    };
+  formspree("initForm", {
+    formElement: "#my-form",
+    formId: "mbggbeqy",
+  });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
