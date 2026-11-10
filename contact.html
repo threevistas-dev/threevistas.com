@@ -838,7 +838,7 @@ body{margin:0}
   function same(a, b) { return a.nodeType === b.nodeType && (a.nodeType !== 1 || (a.localName === b.localName && a.namespaceURI === b.namespaceURI)); }
   function patch(o, n) {
     if (o.nodeType === 3) { if (o.data !== n.data) o.data = n.data; return; }
-    var i, keep = (o.localName === 'details') ? { open: 1 } : {};
+    var i, keep = { open: 1, 'data-fs-active': 1 };
     for (i = o.attributes.length - 1; i >= 0; i--) { var an = o.attributes[i].name; if (!keep[an] && !n.hasAttribute(an)) o.removeAttribute(an); }
     for (i = 0; i < n.attributes.length; i++) { var at = n.attributes[i]; if (keep[at.name]) continue; if (o.getAttribute(at.name) !== at.value) o.setAttribute(at.name, at.value); }
     o.__h = n.__h; if (n.__evs) for (var ev in n.__evs) listen(o, ev);
