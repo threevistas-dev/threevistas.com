@@ -380,266 +380,115 @@
       }
     }
 
-    /* tv-mobile:start */
+                /* tv-mobile:start */
     .tv-mnav,
     .tv-mbar,
     .tv-m-only {
       display: none
     }
 
-    @media (max-width:1100px) {
+    .tv-root nav a,
+    .tv-root nav button {
+      white-space: nowrap !important
+    }
+
+    /* Base responsive helpers & scheduler */
+    .tv-sched-card {
+      width: 100%
+    }
+
+    .tv-sched-day-btn {
+      width: 42px !important;
+      height: 42px !important;
+      aspect-ratio: 1 / 1 !important;
+      border-radius: 50% !important;
+      margin: 0 auto !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 0 !important;
+      box-sizing: border-box !important
+    }
+
+    /* Diagram SVGs responsive height */
+    #platform svg,
+    .tv-root svg[viewBox="0 0 1312 600"],
+    .tv-root svg[viewBox="0 0 560 300"] {
+      height: auto !important;
+      max-width: 100% !important;
+      display: block !important
+    }
+
+            /* ----------------------------------------------------
+       LAPTOPS / IPAD LANDSCAPE (<= 1200px)
+       ---------------------------------------------------- */
+    @media (max-width:1200px) {
       .tv-root {
         min-width: 0 !important;
-        overflow-x: hidden
+        overflow-x: hidden !important;
+        width: 100% !important;
       }
 
       .tv-root section,
-      .tv-root nav,
       .tv-root footer {
         padding-left: 32px !important;
-        padding-right: 32px !important
+        padding-right: 32px !important;
       }
 
-      .tv-root [style*="grid-template-columns: minmax"]:not([style*="grid-template-rows"]) {
-        grid-template-columns: minmax(0, 1fr) !important
+      .tv-root nav {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
       }
 
-      .tv-root [style*="grid-template-columns: repeat(3"]:not([style*="grid-template-rows"]),
-      .tv-root [style*="grid-template-columns: repeat(4"],
-      .tv-root [style*="grid-template-columns: repeat(5"] {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important
+      .tv-root nav > div:first-of-type,
+      .tv-root nav > div:first-of-type > div {
+        gap: 4px !important;
       }
 
-      .tv-root [style*="grid-template-columns: 220px"],
-      .tv-root [style*="grid-template-columns: 260px"] {
-        grid-template-columns: minmax(0, 1fr) !important
+      .tv-root nav > div:first-of-type a,
+      .tv-root nav > div:first-of-type button {
+        padding: 8px 10px !important;
+        font-size: 13.5px !important;
       }
 
-      .tv-root [style*="font-size: 88px"],
-      .tv-root [style*="font-size: 80px"] {
-        font-size: 60px !important
+      .tv-root nav > div:last-of-type {
+        gap: 8px !important;
       }
 
-      .tv-root [style*="position: sticky"] {
-        position: static !important
+      .tv-root nav > div:last-of-type > a {
+        padding: 8px 10px !important;
+        font-size: 13.5px !important;
+      }
+
+      .tv-root nav > div:last-of-type > button {
+        padding: 10px 14px !important;
+        font-size: 13.5px !important;
       }
     }
 
-    @media (max-width:760px) {
-      .tv-root {
-        padding-bottom: 76px
-      }
-
-      .tv-root section,
-      .tv-root nav,
-      .tv-root footer {
-        padding-left: 20px !important;
-        padding-right: 20px !important
-      }
-
-      .tv-root section {
-        padding-top: 56px !important;
-        padding-bottom: 56px !important
-      }
-
-      .tv-root section[style^="padding: 0 "] {
-        padding-top: 0 !important
-      }
-
-      .tv-root section[style*="64px 0;"],
-      .tv-root section[style*="64px 0\""] {
-        padding-bottom: 0 !important
-      }
-
-      .tv-root [style*="grid-template-columns"]:not([style*="repeat(7"]):not([style*="grid-template-rows"]) {
-        grid-template-columns: minmax(0, 1fr) !important
-      }
-
-      .tv-root [style*="gap: 64px"],
-      .tv-root [style*="gap: 72px"],
-      .tv-root [style*="gap: 56px"],
-      .tv-root [style*="gap: 48px"] {
-        gap: 32px !important
-      }
-
-      .tv-root [style*="padding: 64px;"],
-      .tv-root [style*="padding: 56px;"],
-      .tv-root [style*="padding: 44px;"],
-      .tv-root [style*="padding: 40px;"] {
-        padding: 22px !important
-      }
-
-      .tv-root [style*="font-size: 88px"],
-      .tv-root [style*="font-size: 80px"] {
-        font-size: 42px !important;
-        line-height: 1.02 !important
-      }
-
-      .tv-root [style*="font-size: 60px"],
-      .tv-root [style*="font-size: 56px"],
-      .tv-root [style*="font-size: 52px"] {
-        font-size: 32px !important;
-        line-height: 1.1 !important
-      }
-
-      .tv-root [style*="font-size: 72px"],
-      .tv-root [style*="font-size: 64px"] {
-        font-size: 44px !important
-      }
-
-      .tv-root [style*="font-size: 48px"] {
-        font-size: 28px !important
-      }
-
-      .tv-root [style*="font-size: 40px"],
-      .tv-root [style*="font-size: 34px"] {
-        font-size: 24px !important
-      }
-
-      .tv-root [style*="font-size: 30px"] {
-        font-size: 22px !important
-      }
-
-      .tv-root [style*="font-size: 120px"] {
-        font-size: 88px !important
-      }
-
-      .tv-root [style*="font-size: 21px"],
-      .tv-root [style*="font-size: 20px"] {
-        font-size: 17px !important
-      }
-
-      .tv-root [style*="max-width"] {
-        max-width: 100% !important
-      }
-
-      .tv-root img {
-        max-width: 100%;
-        height: auto
-      }
-
-      .tv-root [style*="flex-direction: column"]>* {
-        max-width: 100%;
-        box-sizing: border-box
-      }
-
-      .tv-root input,
-      .tv-root select,
-      .tv-root textarea {
-        min-width: 0 !important;
-        width: 100%;
-        box-sizing: border-box
-      }
-
-      .tv-root [style*="padding: 48px;"],
-      .tv-root [style*="padding: 52px;"],
-      .tv-root [style*="padding: 36px;"] {
-        padding: 22px !important
-      }
-
-      .tv-root [style*="padding: 32px;"] {
-        padding: 18px !important
-      }
-
-      .tv-root [style*="display: flex"]:has(> span[style*="border-radius: 999px"]) {
-        flex-wrap: wrap
-      }
-
-      .tv-root>*,
-      .tv-root section,
-      .tv-root section>* {
-        min-width: 0 !important;
-        max-width: 100%
-      }
-
-      .tv-root svg[width]:not([width="12"]):not([width="14"]):not([width="16"]):not([width="18"]):not([width="20"]):not([width="22"]):not([width="24"]):not([width="26"]):not([width="28"]) {
-        max-width: 100%;
-        height: auto
-      }
-
-      .tv-root [style*="font-size: 44px"],
-      .tv-root [style*="font-size: 42px"] {
-        font-size: 30px !important
-      }
-
-      .tv-root [style*="font-size: 76px"] {
-        font-size: 42px !important;
-        line-height: 1.02 !important
-      }
-
-      .tv-root a[style*="border-radius: 999px"],
-      .tv-root button[style*="border-radius: 999px"] {
-        white-space: nowrap;
-        flex-shrink: 0
-      }
-
-      .tv-root [style*="display: flex"]:has(> a[style*="border-radius: 999px"]),
-      .tv-root [style*="display: flex"]:has(> button[style*="border-radius: 999px"]) {
-        flex-wrap: wrap
-      }
-
-      .tv-root footer [style*="display: flex; align-items: center; gap: 36px"] {
-        flex-direction: column;
-        align-items: flex-start !important;
-        gap: 20px !important
-      }
-
-      .tv-root [style*="display: flex; gap: 24px"] {
-        flex-wrap: wrap;
-        row-gap: 10px !important
-      }
-
-      .tv-root [style*="width: 420px"],
-      .tv-root [style*="width: 440px"],
-      .tv-root [style*="width: 400px"] {
-        max-width: 100%
-      }
-
-      .tv-root [style*="display: flex; gap: 14px; align-items: center"],
-      .tv-root [style*="justify-content: space-between; align-items: flex-end"],
-      .tv-root [style*="justify-content: space-between; align-items: center; gap: 12px"] {
-        flex-wrap: wrap
-      }
-
-      .tv-root [style*="justify-content: space-between; align-items: center; gap: 48px"] {
-        flex-direction: column;
-        align-items: flex-start !important
-      }
-
-      .tv-root [style*="white-space: nowrap"] {
-        white-space: normal !important
-      }
-
-      /* announcement */
-      .tv-root>[style^="height: 44px; display: flex"] {
-        height: auto !important;
-        padding: 10px 20px;
-        flex-wrap: wrap;
-        text-align: center;
-        font-size: 13px !important;
-        gap: 6px !important
-      }
-
-      .tv-root>[style^="height: 44px; display: flex"]>span:first-child {
-        display: none
-      }
-
-      /* nav */
+    /* ----------------------------------------------------
+       TABLETS & IPAD PORTRAIT (<= 991px)
+       All grid sections collapse to 1 column for clean presentation
+       ---------------------------------------------------- */
+    @media (max-width:991px) {
+      /* Mobile hamburger nav */
       .tv-root nav {
         height: 68px !important;
-        position: relative
+        position: relative;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
       }
 
-      .tv-root nav>div {
-        display: none !important
+      .tv-root nav > div {
+        display: none !important;
       }
 
       .tv-mnav {
         display: block;
-        position: static
+        position: static;
       }
 
-      .tv-mnav>summary {
+      .tv-mnav > summary {
         list-style: none;
         cursor: pointer;
         width: 46px;
@@ -648,15 +497,15 @@
         border: 1px solid var(--t3A3D41, #3A3D41);
         display: flex;
         align-items: center;
-        justify-content: center
+        justify-content: center;
       }
 
-      .tv-mnav>summary::-webkit-details-marker {
-        display: none
+      .tv-mnav > summary::-webkit-details-marker {
+        display: none;
       }
 
-      .tv-mnav[open]>summary {
-        background: var(--t2A2D31, #2A2D31)
+      .tv-mnav[open] > summary {
+        background: var(--t2A2D31, #2A2D31);
       }
 
       .tv-mnav-panel {
@@ -672,7 +521,7 @@
         flex-direction: column;
         max-height: calc(100vh - 68px);
         overflow: auto;
-        box-sizing: border-box
+        box-sizing: border-box;
       }
 
       .tv-mnav-panel a {
@@ -680,7 +529,8 @@
         font-size: 17px;
         font-weight: 600;
         border-bottom: 1px solid var(--t2A2C2F, #2A2C2F);
-        color: var(--tF2F3F4, #F2F3F4)
+        color: var(--tF2F3F4, #F2F3F4);
+        white-space: normal !important;
       }
 
       .tv-mnav-panel span {
@@ -688,7 +538,633 @@
         font-family: 'IBM Plex Mono', monospace;
         font-size: 11px;
         letter-spacing: .12em;
-        color: var(--t80868D, #80868D)
+        color: var(--t80868D, #80868D);
+      }
+
+      /* Section paddings for iPad */
+      .tv-root section {
+        padding-top: 64px !important;
+        padding-bottom: 64px !important;
+        padding-left: 28px !important;
+        padding-right: 28px !important;
+      }
+
+      .tv-root footer {
+        padding-left: 28px !important;
+        padding-right: 28px !important;
+        padding-top: 60px !important;
+      }
+
+      /* Stack section headers cleanly */
+      .tv-root [style*="justify-content: space-between; align-items: flex-end"],
+      .tv-root [style*="justify-content: space-between; align-items: center; gap: 48px"] {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 20px !important;
+      }
+
+      .tv-root [style*="justify-content: space-between; align-items: flex-end"] > p,
+      .tv-root [style*="justify-content: space-between; align-items: flex-end"] > button,
+      .tv-root [style*="justify-content: space-between; align-items: flex-end"] > a {
+        max-width: 100% !important;
+        margin-top: 4px !important;
+      }
+
+      /* Section 1: Hero section typography & 1 column layout */
+      .tv-hero-grid,
+      .tv-root section:first-of-type,
+      .tv-root section[style*="minmax(0, 1.05fr)"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 40px !important;
+      }
+
+      .tv-root [style*="font-size: 88px"],
+      .tv-root [style*="font-size: 80px"] {
+        font-size: 48px !important;
+        line-height: 1.02 !important;
+      }
+
+      .tv-hero-rotating,
+      .tv-root [style*="height: 60px"][style*="font-size: 48px"] {
+        height: 48px !important;
+        font-size: 34px !important;
+      }
+
+      /* 1 COLUMN FOR EVERY SECTION GRID ON IPAD / TABLETS */
+      /* Section 3: The Shift comparison cards */
+      .tv-shift-grid,
+      #why [style*="grid-template-columns: repeat(2"],
+      #why > div:last-child {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 20px !important;
+      }
+
+      /* Section 5: The Challenge diagram card & 3 pillars */
+      .tv-root [style*="grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr)"],
+      .tv-pillars-grid,
+      .tv-root [style*="grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 24px !important;
+      }
+
+      /* Section 6: Free AI audit card & form */
+      #audit {
+        padding-left: 28px !important;
+        padding-right: 28px !important;
+        margin-top: 64px !important;
+      }
+
+      #audit > div,
+      .tv-audit-card {
+        padding: 36px 28px !important;
+        gap: 36px !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+      }
+
+      #audit-form [style*="grid-template-columns: repeat(2"],
+      #audit [style*="grid-template-columns: repeat(2, minmax(0, 1fr))"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 12px !important;
+      }
+
+      /* Section 7: Services tabpanels */
+      .tv-root [aria-label="Services"][role="tablist"] {
+        display: flex !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        gap: 10px !important;
+        padding-bottom: 8px !important;
+        scrollbar-width: none;
+      }
+
+      .tv-root [aria-label="Services"][role="tablist"]::-webkit-scrollbar {
+        display: none;
+      }
+
+      .tv-root [aria-label="Services"][role="tablist"] > button {
+        flex: 0 0 200px !important;
+        min-width: 190px !important;
+      }
+
+      #services [role="tabpanel"],
+      .tv-root [role="tabpanel"][style*="grid-template-columns"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 36px !important;
+        padding: 32px 24px !important;
+      }
+
+      /* Section 8: Industries cards */
+      .tv-industries-grid,
+      #industries [style*="grid-template-columns"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 20px !important;
+      }
+
+      /* Section 9: How We Engage cards */
+      .tv-engage-grid,
+      .tv-root [style*="grid-template-columns: repeat(4"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 20px !important;
+      }
+
+      /* Section 10: Customer story card & stats */
+      .tv-story-card,
+      #work [style*="grid-template-columns: minmax(0, 1.5fr)"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 20px !important;
+      }
+
+      .tv-stats-bar {
+        grid-template-columns: minmax(0, 1fr) !important;
+      }
+
+      .tv-stats-bar > div {
+        border-right: 0 !important;
+        border-bottom: 1px solid var(--t2A2C2F, #2A2C2F) !important;
+        padding: 18px 0 !important;
+      }
+
+      .tv-stats-bar > div:last-child {
+        border-bottom: 0 !important;
+      }
+
+      /* Section 11: Contact & Scheduler layout for iPad */
+      .tv-contact-grid,
+      #contact [style*="grid-template-columns: minmax(0, 1.25fr)"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 28px !important;
+      }
+
+      #project-form [style*="grid-template-columns: repeat(2"],
+      #contact [style*="grid-template-columns: repeat(2, minmax(0, 1fr))"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 12px !important;
+      }
+
+      .tv-sched-card {
+        grid-template-columns: minmax(0, 1fr) !important;
+      }
+
+      .tv-sched-info {
+        border-right: 0 !important;
+        border-bottom: 1.5px solid var(--tv-acc-line, #D5F01F) !important;
+        padding: 28px 24px !important;
+      }
+
+      .tv-sched-selection {
+        margin-top: 12px !important;
+      }
+
+      .tv-sched-select-pane {
+        padding: 28px 20px !important;
+        max-width: 440px;
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+      }
+
+      .tv-sched-day-btn {
+        width: 42px !important;
+        height: 42px !important;
+        aspect-ratio: 1 / 1 !important;
+        border-radius: 50% !important;
+        margin: 0 auto !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important;
+      }
+
+      .tv-sched-slots-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        max-width: 440px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .tv-sched-confirm-btn {
+        max-width: 440px;
+        width: 100%;
+        margin: 8px auto 0 !important;
+      }
+
+      /* Footer links 2-column layout on iPad */
+      .tv-footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 36px 24px !important;
+      }
+
+      .tv-footer-grid > div:first-child {
+        grid-column: span 2 !important;
+      }
+    }
+
+    /* ----------------------------------------------------
+       MOBILE PHONES (<= 768px)
+       Strict 1-column layout for every single grid section
+       ---------------------------------------------------- */
+    @media (max-width:768px) {
+      .tv-root {
+        padding-bottom: 76px;
+        min-width: 0 !important;
+        width: 100% !important;
+        overflow-x: hidden !important;
+      }
+
+      .tv-root section,
+      .tv-root footer {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+      .tv-root section {
+        padding-top: 48px !important;
+        padding-bottom: 48px !important;
+      }
+
+      .tv-root section[style^="padding: 0 "] {
+        padding-top: 0 !important;
+      }
+
+      /* Section 1: Hero Section & Console Card */
+      .tv-hero-grid,
+      .tv-root section:first-of-type,
+      .tv-root section[style*="minmax(0, 1.05fr)"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 32px !important;
+        padding-top: 44px !important;
+        padding-bottom: 56px !important;
+      }
+
+      .tv-hero-actions {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+      }
+
+      .tv-hero-actions > * {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+      }
+
+      /* Console card flow: 1 column vertical stack on mobile */
+      .tv-console-flow {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 14px !important;
+      }
+
+      .tv-console-flow > svg {
+        transform: rotate(90deg) !important;
+        margin: 4px auto !important;
+      }
+
+      /* Console bottom metrics: 1 column vertical stack on mobile */
+      .tv-hero-metrics,
+      .tv-console-flow + div[style*="grid-template-columns"],
+      .tv-root [style*="grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 8px !important;
+      }
+
+      /* Section 3: The Shift comparison cards - 1 column on mobile */
+      .tv-shift-grid,
+      #why [style*="grid-template-columns: repeat(2"],
+      #why > div:last-child {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 20px !important;
+      }
+
+      /* Section 5: The Challenge diagram card & 3 pillars - 1 column on mobile */
+      .tv-root [style*="grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr)"],
+      .tv-pillars-grid,
+      .tv-root [style*="grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 20px !important;
+      }
+
+      /* Section 6: Free AI audit card & form - 1 column on mobile */
+      #audit {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        margin-top: 48px !important;
+      }
+
+      #audit > div,
+      .tv-audit-card {
+        padding: 24px 18px !important;
+        gap: 24px !important;
+        border-radius: 18px !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+      }
+
+      #audit-form [style*="grid-template-columns: repeat(2"],
+      #audit [style*="grid-template-columns: repeat(2, minmax(0, 1fr))"],
+      .tv-root [style*="grid-template-columns: repeat(5, minmax(0, 1fr))"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 10px !important;
+      }
+
+      /* Section 7: Services tabpanels - 1 column on mobile */
+      #services [role="tabpanel"],
+      .tv-root [role="tabpanel"][style*="grid-template-columns"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 24px !important;
+        padding: 24px 18px !important;
+      }
+
+      /* Scorecard rows in services tab 1 */
+      #services [style*="grid-template-columns: 200px"] {
+        grid-template-columns: 130px minmax(0, 1fr) 50px !important;
+        gap: 8px !important;
+        font-size: 13px !important;
+      }
+
+      /* Connected flow in services tab 2 */
+      #services [style*="grid-template-columns: minmax(0, 1fr) 40px"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 14px !important;
+      }
+
+      #services [style*="grid-template-columns: minmax(0, 1fr) 40px"] > svg {
+        transform: rotate(90deg) !important;
+        margin: 4px auto !important;
+      }
+
+      /* Variants in services tab 3 */
+      #services [style*="grid-template-columns: repeat(3"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 12px !important;
+      }
+
+      /* Section 8: Industries cards - 1 column on mobile */
+      .tv-industries-grid,
+      #industries [style*="grid-template-columns"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 16px !important;
+      }
+
+      /* Section 9: How We Engage cards - 1 column on mobile */
+      .tv-engage-grid,
+      .tv-root [style*="grid-template-columns: repeat(4"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 16px !important;
+      }
+
+      /* Section 10: Customer story card & stats bar - 1 column on mobile */
+      .tv-story-card,
+      #work [style*="grid-template-columns: minmax(0, 1.5fr)"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 16px !important;
+      }
+
+      #work [style*="grid-template-columns: repeat(3"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 8px !important;
+      }
+
+      .tv-stats-bar {
+        grid-template-columns: minmax(0, 1fr) !important;
+      }
+
+      .tv-stats-bar > div {
+        border-right: 0 !important;
+        border-bottom: 1px solid var(--t2A2C2F, #2A2C2F) !important;
+        padding: 18px 0 !important;
+      }
+
+      .tv-stats-bar > div:last-child {
+        border-bottom: 0 !important;
+      }
+
+      .tv-stats-bar [style*="font-size: 52px"] {
+        font-size: 36px !important;
+      }
+
+      /* Section 11: Contact & Scheduler layout - 1 column on mobile */
+      .tv-contact-grid,
+      #contact [style*="grid-template-columns: minmax(0, 1.25fr)"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 24px !important;
+      }
+
+      #project-form [style*="grid-template-columns: repeat(2"],
+      #contact [style*="grid-template-columns: repeat(2, minmax(0, 1fr))"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 12px !important;
+      }
+
+      .tv-sched-card {
+        grid-template-columns: minmax(0, 1fr) !important;
+      }
+
+      .tv-sched-info {
+        border-right: 0 !important;
+        border-bottom: 1.5px solid var(--tv-acc-line, #D5F01F) !important;
+        padding: 24px 18px !important;
+      }
+
+      .tv-sched-selection {
+        margin-top: 10px !important;
+      }
+
+      .tv-sched-select-pane {
+        padding: 22px 14px !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      .tv-sched-day-btn {
+        width: 38px !important;
+        height: 38px !important;
+        aspect-ratio: 1 / 1 !important;
+        border-radius: 50% !important;
+        margin: 0 auto !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important;
+      }
+
+      .tv-sched-slots-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+      }
+
+      .tv-sched-confirm-btn {
+        width: 100% !important;
+        margin: 8px 0 0 !important;
+      }
+
+      /* Footer - 1 column on mobile */
+      .tv-footer-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 28px !important;
+      }
+
+      .tv-footer-grid > div:first-child {
+        grid-column: auto !important;
+      }
+
+      /* Universal Grid Catch-all: Ensure ALL multi-column grids collapse to 1 column on mobile, except 7-day calendar row */
+      .tv-root [style*="grid-template-columns"]:not([style*="repeat(7"]):not([style*="grid-template-rows"]):not(.tv-sched-slots-grid) {
+        grid-template-columns: minmax(0, 1fr) !important;
+      }
+
+      /* Gap and padding adjustments for mobile */
+      .tv-root [style*="gap: 64px"],
+      .tv-root [style*="gap: 72px"],
+      .tv-root [style*="gap: 56px"],
+      .tv-root [style*="gap: 48px"] {
+        gap: 24px !important;
+      }
+
+      .tv-root [style*="padding: 64px;"],
+      .tv-root [style*="padding: 56px;"],
+      .tv-root [style*="padding: 44px;"],
+      .tv-root [style*="padding: 40px;"],
+      .tv-root [style*="padding: 48px;"],
+      .tv-root [style*="padding: 52px;"],
+      .tv-root [style*="padding: 36px;"] {
+        padding: 20px !important;
+      }
+
+      .tv-root [style*="padding: 32px;"] {
+        padding: 18px !important;
+      }
+
+      /* Headings responsive typography */
+      .tv-root [style*="font-size: 88px"],
+      .tv-root [style*="font-size: 80px"],
+      .tv-root [style*="font-size: 76px"] {
+        font-size: 34px !important;
+        line-height: 1.08 !important;
+        letter-spacing: -0.02em !important;
+      }
+
+      .tv-root [style*="font-size: 60px"],
+      .tv-root [style*="font-size: 56px"],
+      .tv-root [style*="font-size: 52px"] {
+        font-size: 28px !important;
+        line-height: 1.1 !important;
+        letter-spacing: -0.02em !important;
+      }
+
+      .tv-root [style*="font-size: 72px"],
+      .tv-root [style*="font-size: 64px"] {
+        font-size: 36px !important;
+      }
+
+      .tv-root [style*="font-size: 48px"] {
+        font-size: 25px !important;
+      }
+
+      .tv-root [style*="font-size: 44px"],
+      .tv-root [style*="font-size: 42px"],
+      .tv-root [style*="font-size: 40px"],
+      .tv-root [style*="font-size: 36px"] {
+        font-size: 22px !important;
+      }
+
+      .tv-root [style*="font-size: 34px"],
+      .tv-root [style*="font-size: 30px"] {
+        font-size: 20px !important;
+      }
+
+      .tv-root [style*="font-size: 120px"] {
+        font-size: 72px !important;
+      }
+
+      .tv-root [style*="font-size: 20px"],
+      .tv-root [style*="font-size: 19px"],
+      .tv-root [style*="font-size: 18px"] {
+        font-size: 16px !important;
+        line-height: 1.55 !important;
+      }
+
+      .tv-root [style*="max-width"] {
+        max-width: 100% !important;
+      }
+
+      .tv-root img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .tv-root [style*="flex-direction: column"] > * {
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      .tv-root input,
+      .tv-root select,
+      .tv-root textarea {
+        min-width: 0 !important;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .tv-root [style*="display: flex"]:has(> span[style*="border-radius: 999px"]) {
+        flex-wrap: wrap;
+      }
+
+      .tv-root > *,
+      .tv-root section,
+      .tv-root section > * {
+        min-width: 0 !important;
+        max-width: 100%;
+      }
+
+      .tv-root svg[width]:not([width="12"]):not([width="14"]):not([width="16"]):not([width="18"]):not([width="20"]):not([width="22"]):not([width="24"]):not([width="26"]):not([width="28"]) {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .tv-root a[style*="border-radius: 999px"],
+      .tv-root button[style*="border-radius: 999px"] {
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .tv-root [style*="display: flex"]:has(> a[style*="border-radius: 999px"]),
+      .tv-root [style*="display: flex"]:has(> button[style*="border-radius: 999px"]) {
+        flex-wrap: wrap;
+      }
+
+      .tv-root footer [style*="display: flex; align-items: center; gap: 36px"] {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 20px !important;
+      }
+
+      .tv-root [style*="display: flex; gap: 24px"] {
+        flex-wrap: wrap;
+        row-gap: 10px !important;
+      }
+
+      .tv-root [style*="width: 420px"],
+      .tv-root [style*="width: 440px"],
+      .tv-root [style*="width: 400px"] {
+        max-width: 100%;
+      }
+
+      .tv-root [style*="white-space: nowrap"] {
+        white-space: normal !important;
+      }
+
+      /* announcement */
+      .tv-root > [style^="height: 44px; display: flex"] {
+        height: auto !important;
+        padding: 10px 20px;
+        flex-wrap: wrap;
+        text-align: center;
+        font-size: 13px !important;
+        gap: 6px !important;
+      }
+
+      .tv-root > [style^="height: 44px; display: flex"] > span:first-child {
+        display: none;
       }
 
       /* sticky booking bar */
@@ -708,13 +1184,12 @@
         color: #0E0F10 !important;
         font-size: 16px;
         font-weight: 600;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, .35)
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
       }
 
       /* static demos: hide controls, show final state */
       .tv-d-only,
       .tv-root [aria-label="Compare"],
-      .tv-root [aria-label="Services"][role="tablist"],
       .tv-root [aria-label="Customer stories"][role="tablist"],
       .tv-root [aria-label="Interaction mode"],
       .tv-root [aria-label="View"][role="group"],
@@ -725,70 +1200,120 @@
       .tv-root [aria-label="Choose a question"],
       .tv-root [aria-label="Choose a workflow"],
       .tv-root [aria-label="Choose an audience"] {
-        display: none !important
+        display: none !important;
       }
 
       .tv-m-only {
-        display: flex !important
+        display: flex !important;
       }
 
       #services [data-if^="svc"],
       #work [data-if^="story"] {
-        display: contents !important
+        display: contents !important;
       }
 
       [data-asv-view="after"],
       [data-ew-view="a"] {
-        display: contents !important
+        display: contents !important;
       }
 
       [data-asv-view="before"],
       [data-ew-view="b"],
       [data-wf-panel] {
-        display: none !important
+        display: none !important;
       }
 
       [data-wf-panel="0a"] {
-        display: contents !important
+        display: contents !important;
       }
 
       svg[style*="inset: 28px"] {
-        display: none
+        display: none;
       }
 
       .tv-mx-r .tv-mx-t {
-        display: none
+        display: none;
       }
 
       .tv-mx-l {
-        font-size: 12px !important
+        font-size: 12px !important;
       }
 
       .tv-root button[style*="height: 54px"] {
         white-space: normal;
         height: auto !important;
         min-height: 54px;
-        padding: 12px 18px !important
+        padding: 12px 18px !important;
       }
 
       /* floating widgets */
       .tv-root [style*="right: 24px; bottom: 96px"],
       .tv-root [style*="right: 24px; bottom: 24px; z-index: 67"] {
-        display: none !important
+        display: none !important;
       }
 
       .tv-root [style*="left: 24px; bottom: 24px; z-index: 65"] {
         left: 12px !important;
         right: 12px !important;
         bottom: 78px !important;
-        width: auto !important
+        width: auto !important;
       }
 
       .tv-root [style*="position: fixed; inset: 0; z-index: 50"] {
-        padding: 40px 20px 120px !important
+        padding: 40px 20px 120px !important;
       }
     }
 
+    /* ----------------------------------------------------
+       SMALL PHONES (<= 480px)
+       ---------------------------------------------------- */
+    @media (max-width:480px) {
+      .tv-root nav > a:first-child {
+        transform: scale(0.85);
+        transform-origin: left center;
+      }
+
+      .tv-root [style*="font-size: 88px"],
+      .tv-root [style*="font-size: 80px"],
+      .tv-root [style*="font-size: 76px"] {
+        font-size: 30px !important;
+      }
+
+      .tv-root [style*="font-size: 60px"],
+      .tv-root [style*="font-size: 56px"],
+      .tv-root [style*="font-size: 52px"] {
+        font-size: 24px !important;
+      }
+
+      .tv-hero-rotating,
+      .tv-root [style*="height: 60px"][style*="font-size: 48px"] {
+        height: 38px !important;
+        font-size: 22px !important;
+      }
+
+      .tv-caret {
+        height: 28px !important;
+      }
+
+      .tv-sched-slots-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+      }
+    }
+
+    /* ----------------------------------------------------
+       EXTRA SMALL PHONES (<= 360px)
+       ---------------------------------------------------- */
+    @media (max-width:360px) {
+      .tv-sched-day-btn {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 12px !important;
+      }
+
+      .tv-sched-cal-grid {
+        gap: 2px !important;
+      }
+    }
     /* tv-mobile:end */
 
     /* Formspree AJAX feedback states */
@@ -893,88 +1418,944 @@ button{font-family:'Instrument Sans',system-ui,sans-serif}
 .tv-flow{stroke-dasharray:6 6;animation:tvFlow 1.2s linear infinite}
 @media (prefers-reduced-motion: reduce){*{animation:none !important}}
 
-/* tv-mobile:start */
-.tv-mnav,.tv-mbar,.tv-m-only{display:none}
-@media (max-width:1100px){
-.tv-root{min-width:0 !important;overflow-x:hidden}
-.tv-root section,.tv-root nav,.tv-root footer{padding-left:32px !important;padding-right:32px !important}
-.tv-root [style*="grid-template-columns: minmax"]:not([style*="grid-template-rows"]){grid-template-columns:minmax(0,1fr) !important}
-.tv-root [style*="grid-template-columns: repeat(3"]:not([style*="grid-template-rows"]),.tv-root [style*="grid-template-columns: repeat(4"],.tv-root [style*="grid-template-columns: repeat(5"]{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
-.tv-root [style*="grid-template-columns: 220px"],.tv-root [style*="grid-template-columns: 260px"]{grid-template-columns:minmax(0,1fr) !important}
-.tv-root [style*="font-size: 88px"],.tv-root [style*="font-size: 80px"]{font-size:60px !important}
-.tv-root [style*="position: sticky"]{position:static !important}
-}
-@media (max-width:760px){
-.tv-root{padding-bottom:76px}
-.tv-root section,.tv-root nav,.tv-root footer{padding-left:20px !important;padding-right:20px !important}
-.tv-root section{padding-top:56px !important;padding-bottom:56px !important}
-.tv-root section[style^="padding: 0 "]{padding-top:0 !important}
-.tv-root section[style*="64px 0;"],.tv-root section[style*="64px 0\""]{padding-bottom:0 !important}
-.tv-root [style*="grid-template-columns"]:not([style*="repeat(7"]):not([style*="grid-template-rows"]){grid-template-columns:minmax(0,1fr) !important}
-.tv-root [style*="gap: 64px"],.tv-root [style*="gap: 72px"],.tv-root [style*="gap: 56px"],.tv-root [style*="gap: 48px"]{gap:32px !important}
-.tv-root [style*="padding: 64px;"],.tv-root [style*="padding: 56px;"],.tv-root [style*="padding: 44px;"],.tv-root [style*="padding: 40px;"]{padding:22px !important}
-.tv-root [style*="font-size: 88px"],.tv-root [style*="font-size: 80px"]{font-size:42px !important;line-height:1.02 !important}
-.tv-root [style*="font-size: 60px"],.tv-root [style*="font-size: 56px"],.tv-root [style*="font-size: 52px"]{font-size:32px !important;line-height:1.1 !important}
-.tv-root [style*="font-size: 72px"],.tv-root [style*="font-size: 64px"]{font-size:44px !important}
-.tv-root [style*="font-size: 48px"]{font-size:28px !important}
-.tv-root [style*="font-size: 40px"],.tv-root [style*="font-size: 34px"]{font-size:24px !important}
-.tv-root [style*="font-size: 30px"]{font-size:22px !important}
-.tv-root [style*="font-size: 120px"]{font-size:88px !important}
-.tv-root [style*="font-size: 21px"],.tv-root [style*="font-size: 20px"]{font-size:17px !important}
-.tv-root [style*="max-width"]{max-width:100% !important}
-.tv-root img{max-width:100%;height:auto}
-.tv-root [style*="flex-direction: column"] > *{max-width:100%;box-sizing:border-box}
-.tv-root input,.tv-root select,.tv-root textarea{min-width:0 !important;width:100%;box-sizing:border-box}
-.tv-root [style*="padding: 48px;"],.tv-root [style*="padding: 52px;"],.tv-root [style*="padding: 36px;"]{padding:22px !important}
-.tv-root [style*="padding: 32px;"]{padding:18px !important}
-.tv-root [style*="display: flex"]:has(> span[style*="border-radius: 999px"]){flex-wrap:wrap}
-.tv-root > *,.tv-root section,.tv-root section > *{min-width:0 !important;max-width:100%}
-.tv-root svg[width]:not([width="12"]):not([width="14"]):not([width="16"]):not([width="18"]):not([width="20"]):not([width="22"]):not([width="24"]):not([width="26"]):not([width="28"]){max-width:100%;height:auto}
-.tv-root [style*="font-size: 44px"],.tv-root [style*="font-size: 42px"]{font-size:30px !important}
-.tv-root [style*="font-size: 76px"]{font-size:42px !important;line-height:1.02 !important}
-.tv-root a[style*="border-radius: 999px"],.tv-root button[style*="border-radius: 999px"]{white-space:nowrap;flex-shrink:0}
-.tv-root [style*="display: flex"]:has(> a[style*="border-radius: 999px"]),.tv-root [style*="display: flex"]:has(> button[style*="border-radius: 999px"]){flex-wrap:wrap}
-.tv-root footer [style*="display: flex; align-items: center; gap: 36px"]{flex-direction:column;align-items:flex-start !important;gap:20px !important}
-.tv-root [style*="display: flex; gap: 24px"]{flex-wrap:wrap;row-gap:10px !important}
-.tv-root [style*="width: 420px"],.tv-root [style*="width: 440px"],.tv-root [style*="width: 400px"]{max-width:100%}
-.tv-root [style*="display: flex; gap: 14px; align-items: center"],.tv-root [style*="justify-content: space-between; align-items: flex-end"],.tv-root [style*="justify-content: space-between; align-items: center; gap: 12px"]{flex-wrap:wrap}
-.tv-root [style*="justify-content: space-between; align-items: center; gap: 48px"]{flex-direction:column;align-items:flex-start !important}
-.tv-root [style*="white-space: nowrap"]{white-space:normal !important}
-/* announcement */
-.tv-root > [style^="height: 44px; display: flex"]{height:auto !important;padding:10px 20px;flex-wrap:wrap;text-align:center;font-size:13px !important;gap:6px !important}
-.tv-root > [style^="height: 44px; display: flex"] > span:first-child{display:none}
-/* nav */
-.tv-root nav{height:68px !important;position:relative}
-.tv-root nav > div{display:none !important}
-.tv-mnav{display:block;position:static}
-.tv-mnav > summary{list-style:none;cursor:pointer;width:46px;height:46px;border-radius:50%;border:1px solid var(--t3A3D41,#3A3D41);display:flex;align-items:center;justify-content:center}
-.tv-mnav > summary::-webkit-details-marker{display:none}
-.tv-mnav[open] > summary{background:var(--t2A2D31,#2A2D31)}
-.tv-mnav-panel{position:absolute;left:0;right:0;top:68px;z-index:40;padding:12px 20px 24px;background:var(--t16181A,#16181A);border-bottom:1px solid var(--t2A2C2F,#2A2C2F);display:flex;flex-direction:column;max-height:calc(100vh - 68px);overflow:auto;box-sizing:border-box}
-.tv-mnav-panel a{padding:13px 0;font-size:17px;font-weight:600;border-bottom:1px solid var(--t2A2C2F,#2A2C2F);color:var(--tF2F3F4,#F2F3F4)}
-.tv-mnav-panel span{padding:18px 0 4px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--t80868D,#80868D)}
-/* sticky booking bar */
-.tv-mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;height:54px;border-radius:999px;align-items:center;justify-content:center;gap:10px;background:var(--tv-accent-solid,#D5F01F);color:#0E0F10 !important;font-size:16px;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-/* static demos: hide controls, show final state */
-.tv-d-only,.tv-root [aria-label="Compare"],.tv-root [aria-label="Services"][role="tablist"],.tv-root [aria-label="Customer stories"][role="tablist"],.tv-root [aria-label="Interaction mode"],.tv-root [aria-label="View"][role="group"],.tv-root [aria-label="Before or after"],.tv-root [aria-label="Before or with AI"],.tv-root [aria-label="Compare websites"],.tv-root [aria-label="Filter by service"],.tv-root [aria-label="Choose a question"],.tv-root [aria-label="Choose a workflow"],.tv-root [aria-label="Choose an audience"]{display:none !important}
-.tv-m-only{display:flex !important}
-#services [data-if^="svc"],#work [data-if^="story"]{display:contents !important}
-[data-asv-view="after"],[data-ew-view="a"]{display:contents !important}
-[data-asv-view="before"],[data-ew-view="b"],[data-wf-panel]{display:none !important}
-[data-wf-panel="0a"]{display:contents !important}
-svg[style*="inset: 28px"]{display:none}
-.tv-mx-r .tv-mx-t{display:none}
-.tv-mx-l{font-size:12px !important}
-.tv-root button[style*="height: 54px"]{white-space:normal;height:auto !important;min-height:54px;padding:12px 18px !important}
-/* floating widgets */
-.tv-root [style*="right: 24px; bottom: 96px"],.tv-root [style*="right: 24px; bottom: 24px; z-index: 67"]{display:none !important}
-.tv-root [style*="left: 24px; bottom: 24px; z-index: 65"]{left:12px !important;right:12px !important;bottom:78px !important;width:auto !important}
-.tv-root [style*="position: fixed; inset: 0; z-index: 50"]{padding:40px 20px 120px !important}
-}
-/* tv-mobile:end */
+    /* tv-mobile:start */
+    .tv-mnav,
+    .tv-mbar,
+    .tv-m-only {
+      display: none
+    }
+
+    .tv-root nav a,
+    .tv-root nav button {
+      white-space: nowrap !important
+    }
+
+    /* Base responsive helpers & scheduler */
+    .tv-sched-card {
+      width: 100%
+    }
+
+    .tv-sched-day-btn {
+      width: 42px !important;
+      height: 42px !important;
+      aspect-ratio: 1 / 1 !important;
+      border-radius: 50% !important;
+      margin: 0 auto !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 0 !important;
+      box-sizing: border-box !important
+    }
+
+    /* Diagram SVGs responsive height */
+    #platform svg,
+    .tv-root svg[viewBox="0 0 1312 600"],
+    .tv-root svg[viewBox="0 0 560 300"] {
+      height: auto !important;
+      max-width: 100% !important;
+      display: block !important
+    }
+
+            /* ----------------------------------------------------
+       LAPTOPS / IPAD LANDSCAPE (<= 1200px)
+       ---------------------------------------------------- */
+    @media (max-width:1200px) {
+      .tv-root {
+        min-width: 0 !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
+      }
+
+      .tv-root section,
+      .tv-root footer {
+        padding-left: 32px !important;
+        padding-right: 32px !important;
+      }
+
+      .tv-root nav {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+      .tv-root nav > div:first-of-type,
+      .tv-root nav > div:first-of-type > div {
+        gap: 4px !important;
+      }
+
+      .tv-root nav > div:first-of-type a,
+      .tv-root nav > div:first-of-type button {
+        padding: 8px 10px !important;
+        font-size: 13.5px !important;
+      }
+
+      .tv-root nav > div:last-of-type {
+        gap: 8px !important;
+      }
+
+      .tv-root nav > div:last-of-type > a {
+        padding: 8px 10px !important;
+        font-size: 13.5px !important;
+      }
+
+      .tv-root nav > div:last-of-type > button {
+        padding: 10px 14px !important;
+        font-size: 13.5px !important;
+      }
+    }
+
+    /* ----------------------------------------------------
+       TABLETS & IPAD PORTRAIT (<= 991px)
+       All grid sections collapse to 1 column for clean presentation
+       ---------------------------------------------------- */
+    @media (max-width:991px) {
+      /* Mobile hamburger nav */
+      .tv-root nav {
+        height: 68px !important;
+        position: relative;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+      .tv-root nav > div {
+        display: none !important;
+      }
+
+      .tv-mnav {
+        display: block;
+        position: static;
+      }
+
+      .tv-mnav > summary {
+        list-style: none;
+        cursor: pointer;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 1px solid var(--t3A3D41, #3A3D41);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .tv-mnav > summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .tv-mnav[open] > summary {
+        background: var(--t2A2D31, #2A2D31);
+      }
+
+      .tv-mnav-panel {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 68px;
+        z-index: 40;
+        padding: 12px 20px 24px;
+        background: var(--t16181A, #16181A);
+        border-bottom: 1px solid var(--t2A2C2F, #2A2C2F);
+        display: flex;
+        flex-direction: column;
+        max-height: calc(100vh - 68px);
+        overflow: auto;
+        box-sizing: border-box;
+      }
+
+      .tv-mnav-panel a {
+        padding: 13px 0;
+        font-size: 17px;
+        font-weight: 600;
+        border-bottom: 1px solid var(--t2A2C2F, #2A2C2F);
+        color: var(--tF2F3F4, #F2F3F4);
+        white-space: normal !important;
+      }
+
+      .tv-mnav-panel span {
+        padding: 18px 0 4px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        letter-spacing: .12em;
+        color: var(--t80868D, #80868D);
+      }
+
+      /* Section paddings for iPad */
+      .tv-root section {
+        padding-top: 64px !important;
+        padding-bottom: 64px !important;
+        padding-left: 28px !important;
+        padding-right: 28px !important;
+      }
+
+      .tv-root footer {
+        padding-left: 28px !important;
+        padding-right: 28px !important;
+        padding-top: 60px !important;
+      }
+
+      /* Stack section headers cleanly */
+      .tv-root [style*="justify-content: space-between; align-items: flex-end"],
+      .tv-root [style*="justify-content: space-between; align-items: center; gap: 48px"] {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 20px !important;
+      }
+
+      .tv-root [style*="justify-content: space-between; align-items: flex-end"] > p,
+      .tv-root [style*="justify-content: space-between; align-items: flex-end"] > button,
+      .tv-root [style*="justify-content: space-between; align-items: flex-end"] > a {
+        max-width: 100% !important;
+        margin-top: 4px !important;
+      }
+
+      /* Section 1: Hero section typography & 1 column layout */
+      .tv-hero-grid,
+      .tv-root section:first-of-type,
+      .tv-root section[style*="minmax(0, 1.05fr)"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 40px !important;
+      }
+
+      .tv-root [style*="font-size: 88px"],
+      .tv-root [style*="font-size: 80px"] {
+        font-size: 48px !important;
+        line-height: 1.02 !important;
+      }
+
+      .tv-hero-rotating,
+      .tv-root [style*="height: 60px"][style*="font-size: 48px"] {
+        height: 48px !important;
+        font-size: 34px !important;
+      }
+
+      /* 1 COLUMN FOR EVERY SECTION GRID ON IPAD / TABLETS */
+      /* Section 3: The Shift comparison cards */
+      .tv-shift-grid,
+      #why [style*="grid-template-columns: repeat(2"],
+      #why > div:last-child {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 20px !important;
+      }
+
+      /* Section 5: The Challenge diagram card & 3 pillars */
+      .tv-root [style*="grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr)"],
+      .tv-pillars-grid,
+      .tv-root [style*="grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 24px !important;
+      }
+
+      /* Section 6: Free AI audit card & form */
+      #audit {
+        padding-left: 28px !important;
+        padding-right: 28px !important;
+        margin-top: 64px !important;
+      }
+
+      #audit > div,
+      .tv-audit-card {
+        padding: 36px 28px !important;
+        gap: 36px !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+      }
+
+      #audit-form [style*="grid-template-columns: repeat(2"],
+      #audit [style*="grid-template-columns: repeat(2, minmax(0, 1fr))"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 12px !important;
+      }
+
+      /* Section 7: Services tabpanels */
+      .tv-root [aria-label="Services"][role="tablist"] {
+        display: flex !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        gap: 10px !important;
+        padding-bottom: 8px !important;
+        scrollbar-width: none;
+      }
+
+      .tv-root [aria-label="Services"][role="tablist"]::-webkit-scrollbar {
+        display: none;
+      }
+
+      .tv-root [aria-label="Services"][role="tablist"] > button {
+        flex: 0 0 200px !important;
+        min-width: 190px !important;
+      }
+
+      #services [role="tabpanel"],
+      .tv-root [role="tabpanel"][style*="grid-template-columns"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 36px !important;
+        padding: 32px 24px !important;
+      }
+
+      /* Section 8: Industries cards */
+      .tv-industries-grid,
+      #industries [style*="grid-template-columns"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 20px !important;
+      }
+
+      /* Section 9: How We Engage cards */
+      .tv-engage-grid,
+      .tv-root [style*="grid-template-columns: repeat(4"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 20px !important;
+      }
+
+      /* Section 10: Customer story card & stats */
+      .tv-story-card,
+      #work [style*="grid-template-columns: minmax(0, 1.5fr)"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 20px !important;
+      }
+
+      .tv-stats-bar {
+        grid-template-columns: minmax(0, 1fr) !important;
+      }
+
+      .tv-stats-bar > div {
+        border-right: 0 !important;
+        border-bottom: 1px solid var(--t2A2C2F, #2A2C2F) !important;
+        padding: 18px 0 !important;
+      }
+
+      .tv-stats-bar > div:last-child {
+        border-bottom: 0 !important;
+      }
+
+      /* Section 11: Contact & Scheduler layout for iPad */
+      .tv-contact-grid,
+      #contact [style*="grid-template-columns: minmax(0, 1.25fr)"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 28px !important;
+      }
+
+      #project-form [style*="grid-template-columns: repeat(2"],
+      #contact [style*="grid-template-columns: repeat(2, minmax(0, 1fr))"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 12px !important;
+      }
+
+      .tv-sched-card {
+        grid-template-columns: minmax(0, 1fr) !important;
+      }
+
+      .tv-sched-info {
+        border-right: 0 !important;
+        border-bottom: 1.5px solid var(--tv-acc-line, #D5F01F) !important;
+        padding: 28px 24px !important;
+      }
+
+      .tv-sched-selection {
+        margin-top: 12px !important;
+      }
+
+      .tv-sched-select-pane {
+        padding: 28px 20px !important;
+        max-width: 440px;
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+      }
+
+      .tv-sched-day-btn {
+        width: 42px !important;
+        height: 42px !important;
+        aspect-ratio: 1 / 1 !important;
+        border-radius: 50% !important;
+        margin: 0 auto !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important;
+      }
+
+      .tv-sched-slots-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        max-width: 440px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .tv-sched-confirm-btn {
+        max-width: 440px;
+        width: 100%;
+        margin: 8px auto 0 !important;
+      }
+
+      /* Footer links 2-column layout on iPad */
+      .tv-footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 36px 24px !important;
+      }
+
+      .tv-footer-grid > div:first-child {
+        grid-column: span 2 !important;
+      }
+    }
+
+    /* ----------------------------------------------------
+       MOBILE PHONES (<= 768px)
+       Strict 1-column layout for every single grid section
+       ---------------------------------------------------- */
+    @media (max-width:768px) {
+      .tv-root {
+        padding-bottom: 76px;
+        min-width: 0 !important;
+        width: 100% !important;
+        overflow-x: hidden !important;
+      }
+
+      .tv-root section,
+      .tv-root footer {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+      .tv-root section {
+        padding-top: 48px !important;
+        padding-bottom: 48px !important;
+      }
+
+      .tv-root section[style^="padding: 0 "] {
+        padding-top: 0 !important;
+      }
+
+      /* Section 1: Hero Section & Console Card */
+      .tv-hero-grid,
+      .tv-root section:first-of-type,
+      .tv-root section[style*="minmax(0, 1.05fr)"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 32px !important;
+        padding-top: 44px !important;
+        padding-bottom: 56px !important;
+      }
+
+      .tv-hero-actions {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+      }
+
+      .tv-hero-actions > * {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+      }
+
+      /* Console card flow: 1 column vertical stack on mobile */
+      .tv-console-flow {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 14px !important;
+      }
+
+      .tv-console-flow > svg {
+        transform: rotate(90deg) !important;
+        margin: 4px auto !important;
+      }
+
+      /* Console bottom metrics: 1 column vertical stack on mobile */
+      .tv-hero-metrics,
+      .tv-console-flow + div[style*="grid-template-columns"],
+      .tv-root [style*="grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 8px !important;
+      }
+
+      /* Section 3: The Shift comparison cards - 1 column on mobile */
+      .tv-shift-grid,
+      #why [style*="grid-template-columns: repeat(2"],
+      #why > div:last-child {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 20px !important;
+      }
+
+      /* Section 5: The Challenge diagram card & 3 pillars - 1 column on mobile */
+      .tv-root [style*="grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr)"],
+      .tv-pillars-grid,
+      .tv-root [style*="grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 20px !important;
+      }
+
+      /* Section 6: Free AI audit card & form - 1 column on mobile */
+      #audit {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        margin-top: 48px !important;
+      }
+
+      #audit > div,
+      .tv-audit-card {
+        padding: 24px 18px !important;
+        gap: 24px !important;
+        border-radius: 18px !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+      }
+
+      #audit-form [style*="grid-template-columns: repeat(2"],
+      #audit [style*="grid-template-columns: repeat(2, minmax(0, 1fr))"],
+      .tv-root [style*="grid-template-columns: repeat(5, minmax(0, 1fr))"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 10px !important;
+      }
+
+      /* Section 7: Services tabpanels - 1 column on mobile */
+      #services [role="tabpanel"],
+      .tv-root [role="tabpanel"][style*="grid-template-columns"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 24px !important;
+        padding: 24px 18px !important;
+      }
+
+      /* Scorecard rows in services tab 1 */
+      #services [style*="grid-template-columns: 200px"] {
+        grid-template-columns: 130px minmax(0, 1fr) 50px !important;
+        gap: 8px !important;
+        font-size: 13px !important;
+      }
+
+      /* Connected flow in services tab 2 */
+      #services [style*="grid-template-columns: minmax(0, 1fr) 40px"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 14px !important;
+      }
+
+      #services [style*="grid-template-columns: minmax(0, 1fr) 40px"] > svg {
+        transform: rotate(90deg) !important;
+        margin: 4px auto !important;
+      }
+
+      /* Variants in services tab 3 */
+      #services [style*="grid-template-columns: repeat(3"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 12px !important;
+      }
+
+      /* Section 8: Industries cards - 1 column on mobile */
+      .tv-industries-grid,
+      #industries [style*="grid-template-columns"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 16px !important;
+      }
+
+      /* Section 9: How We Engage cards - 1 column on mobile */
+      .tv-engage-grid,
+      .tv-root [style*="grid-template-columns: repeat(4"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 16px !important;
+      }
+
+      /* Section 10: Customer story card & stats bar - 1 column on mobile */
+      .tv-story-card,
+      #work [style*="grid-template-columns: minmax(0, 1.5fr)"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 16px !important;
+      }
+
+      #work [style*="grid-template-columns: repeat(3"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 8px !important;
+      }
+
+      .tv-stats-bar {
+        grid-template-columns: minmax(0, 1fr) !important;
+      }
+
+      .tv-stats-bar > div {
+        border-right: 0 !important;
+        border-bottom: 1px solid var(--t2A2C2F, #2A2C2F) !important;
+        padding: 18px 0 !important;
+      }
+
+      .tv-stats-bar > div:last-child {
+        border-bottom: 0 !important;
+      }
+
+      .tv-stats-bar [style*="font-size: 52px"] {
+        font-size: 36px !important;
+      }
+
+      /* Section 11: Contact & Scheduler layout - 1 column on mobile */
+      .tv-contact-grid,
+      #contact [style*="grid-template-columns: minmax(0, 1.25fr)"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 24px !important;
+      }
+
+      #project-form [style*="grid-template-columns: repeat(2"],
+      #contact [style*="grid-template-columns: repeat(2, minmax(0, 1fr))"] {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 12px !important;
+      }
+
+      .tv-sched-card {
+        grid-template-columns: minmax(0, 1fr) !important;
+      }
+
+      .tv-sched-info {
+        border-right: 0 !important;
+        border-bottom: 1.5px solid var(--tv-acc-line, #D5F01F) !important;
+        padding: 24px 18px !important;
+      }
+
+      .tv-sched-selection {
+        margin-top: 10px !important;
+      }
+
+      .tv-sched-select-pane {
+        padding: 22px 14px !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      .tv-sched-day-btn {
+        width: 38px !important;
+        height: 38px !important;
+        aspect-ratio: 1 / 1 !important;
+        border-radius: 50% !important;
+        margin: 0 auto !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important;
+      }
+
+      .tv-sched-slots-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+      }
+
+      .tv-sched-confirm-btn {
+        width: 100% !important;
+        margin: 8px 0 0 !important;
+      }
+
+      /* Footer - 1 column on mobile */
+      .tv-footer-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 28px !important;
+      }
+
+      .tv-footer-grid > div:first-child {
+        grid-column: auto !important;
+      }
+
+      /* Universal Grid Catch-all: Ensure ALL multi-column grids collapse to 1 column on mobile, except 7-day calendar row */
+      .tv-root [style*="grid-template-columns"]:not([style*="repeat(7"]):not([style*="grid-template-rows"]):not(.tv-sched-slots-grid) {
+        grid-template-columns: minmax(0, 1fr) !important;
+      }
+
+      /* Gap and padding adjustments for mobile */
+      .tv-root [style*="gap: 64px"],
+      .tv-root [style*="gap: 72px"],
+      .tv-root [style*="gap: 56px"],
+      .tv-root [style*="gap: 48px"] {
+        gap: 24px !important;
+      }
+
+      .tv-root [style*="padding: 64px;"],
+      .tv-root [style*="padding: 56px;"],
+      .tv-root [style*="padding: 44px;"],
+      .tv-root [style*="padding: 40px;"],
+      .tv-root [style*="padding: 48px;"],
+      .tv-root [style*="padding: 52px;"],
+      .tv-root [style*="padding: 36px;"] {
+        padding: 20px !important;
+      }
+
+      .tv-root [style*="padding: 32px;"] {
+        padding: 18px !important;
+      }
+
+      /* Headings responsive typography */
+      .tv-root [style*="font-size: 88px"],
+      .tv-root [style*="font-size: 80px"],
+      .tv-root [style*="font-size: 76px"] {
+        font-size: 34px !important;
+        line-height: 1.08 !important;
+        letter-spacing: -0.02em !important;
+      }
+
+      .tv-root [style*="font-size: 60px"],
+      .tv-root [style*="font-size: 56px"],
+      .tv-root [style*="font-size: 52px"] {
+        font-size: 28px !important;
+        line-height: 1.1 !important;
+        letter-spacing: -0.02em !important;
+      }
+
+      .tv-root [style*="font-size: 72px"],
+      .tv-root [style*="font-size: 64px"] {
+        font-size: 36px !important;
+      }
+
+      .tv-root [style*="font-size: 48px"] {
+        font-size: 25px !important;
+      }
+
+      .tv-root [style*="font-size: 44px"],
+      .tv-root [style*="font-size: 42px"],
+      .tv-root [style*="font-size: 40px"],
+      .tv-root [style*="font-size: 36px"] {
+        font-size: 22px !important;
+      }
+
+      .tv-root [style*="font-size: 34px"],
+      .tv-root [style*="font-size: 30px"] {
+        font-size: 20px !important;
+      }
+
+      .tv-root [style*="font-size: 120px"] {
+        font-size: 72px !important;
+      }
+
+      .tv-root [style*="font-size: 20px"],
+      .tv-root [style*="font-size: 19px"],
+      .tv-root [style*="font-size: 18px"] {
+        font-size: 16px !important;
+        line-height: 1.55 !important;
+      }
+
+      .tv-root [style*="max-width"] {
+        max-width: 100% !important;
+      }
+
+      .tv-root img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .tv-root [style*="flex-direction: column"] > * {
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      .tv-root input,
+      .tv-root select,
+      .tv-root textarea {
+        min-width: 0 !important;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .tv-root [style*="display: flex"]:has(> span[style*="border-radius: 999px"]) {
+        flex-wrap: wrap;
+      }
+
+      .tv-root > *,
+      .tv-root section,
+      .tv-root section > * {
+        min-width: 0 !important;
+        max-width: 100%;
+      }
+
+      .tv-root svg[width]:not([width="12"]):not([width="14"]):not([width="16"]):not([width="18"]):not([width="20"]):not([width="22"]):not([width="24"]):not([width="26"]):not([width="28"]) {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .tv-root a[style*="border-radius: 999px"],
+      .tv-root button[style*="border-radius: 999px"] {
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .tv-root [style*="display: flex"]:has(> a[style*="border-radius: 999px"]),
+      .tv-root [style*="display: flex"]:has(> button[style*="border-radius: 999px"]) {
+        flex-wrap: wrap;
+      }
+
+      .tv-root footer [style*="display: flex; align-items: center; gap: 36px"] {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 20px !important;
+      }
+
+      .tv-root [style*="display: flex; gap: 24px"] {
+        flex-wrap: wrap;
+        row-gap: 10px !important;
+      }
+
+      .tv-root [style*="width: 420px"],
+      .tv-root [style*="width: 440px"],
+      .tv-root [style*="width: 400px"] {
+        max-width: 100%;
+      }
+
+      .tv-root [style*="white-space: nowrap"] {
+        white-space: normal !important;
+      }
+
+      /* announcement */
+      .tv-root > [style^="height: 44px; display: flex"] {
+        height: auto !important;
+        padding: 10px 20px;
+        flex-wrap: wrap;
+        text-align: center;
+        font-size: 13px !important;
+        gap: 6px !important;
+      }
+
+      .tv-root > [style^="height: 44px; display: flex"] > span:first-child {
+        display: none;
+      }
+
+      /* sticky booking bar */
+      .tv-mbar {
+        display: flex;
+        position: fixed;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        z-index: 70;
+        height: 54px;
+        border-radius: 999px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: var(--tv-accent-solid, #D5F01F);
+        color: #0E0F10 !important;
+        font-size: 16px;
+        font-weight: 600;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+      }
+
+      /* static demos: hide controls, show final state */
+      .tv-d-only,
+      .tv-root [aria-label="Compare"],
+      .tv-root [aria-label="Customer stories"][role="tablist"],
+      .tv-root [aria-label="Interaction mode"],
+      .tv-root [aria-label="View"][role="group"],
+      .tv-root [aria-label="Before or after"],
+      .tv-root [aria-label="Before or with AI"],
+      .tv-root [aria-label="Compare websites"],
+      .tv-root [aria-label="Filter by service"],
+      .tv-root [aria-label="Choose a question"],
+      .tv-root [aria-label="Choose a workflow"],
+      .tv-root [aria-label="Choose an audience"] {
+        display: none !important;
+      }
+
+      .tv-m-only {
+        display: flex !important;
+      }
+
+      #services [data-if^="svc"],
+      #work [data-if^="story"] {
+        display: contents !important;
+      }
+
+      [data-asv-view="after"],
+      [data-ew-view="a"] {
+        display: contents !important;
+      }
+
+      [data-asv-view="before"],
+      [data-ew-view="b"],
+      [data-wf-panel] {
+        display: none !important;
+      }
+
+      [data-wf-panel="0a"] {
+        display: contents !important;
+      }
+
+      svg[style*="inset: 28px"] {
+        display: none;
+      }
+
+      .tv-mx-r .tv-mx-t {
+        display: none;
+      }
+
+      .tv-mx-l {
+        font-size: 12px !important;
+      }
+
+      .tv-root button[style*="height: 54px"] {
+        white-space: normal;
+        height: auto !important;
+        min-height: 54px;
+        padding: 12px 18px !important;
+      }
+
+      /* floating widgets */
+      .tv-root [style*="right: 24px; bottom: 96px"],
+      .tv-root [style*="right: 24px; bottom: 24px; z-index: 67"] {
+        display: none !important;
+      }
+
+      .tv-root [style*="left: 24px; bottom: 24px; z-index: 65"] {
+        left: 12px !important;
+        right: 12px !important;
+        bottom: 78px !important;
+        width: auto !important;
+      }
+
+      .tv-root [style*="position: fixed; inset: 0; z-index: 50"] {
+        padding: 40px 20px 120px !important;
+      }
+    }
+
+    /* ----------------------------------------------------
+       SMALL PHONES (<= 480px)
+       ---------------------------------------------------- */
+    @media (max-width:480px) {
+      .tv-root nav > a:first-child {
+        transform: scale(0.85);
+        transform-origin: left center;
+      }
+
+      .tv-root [style*="font-size: 88px"],
+      .tv-root [style*="font-size: 80px"],
+      .tv-root [style*="font-size: 76px"] {
+        font-size: 30px !important;
+      }
+
+      .tv-root [style*="font-size: 60px"],
+      .tv-root [style*="font-size: 56px"],
+      .tv-root [style*="font-size: 52px"] {
+        font-size: 24px !important;
+      }
+
+      .tv-hero-rotating,
+      .tv-root [style*="height: 60px"][style*="font-size: 48px"] {
+        height: 38px !important;
+        font-size: 22px !important;
+      }
+
+      .tv-caret {
+        height: 28px !important;
+      }
+
+      .tv-sched-slots-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+      }
+    }
+
+    /* ----------------------------------------------------
+       EXTRA SMALL PHONES (<= 360px)
+       ---------------------------------------------------- */
+    @media (max-width:360px) {
+      .tv-sched-day-btn {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 12px !important;
+      }
+
+      .tv-sched-cal-grid {
+        gap: 2px !important;
+      }
+    }
+    /* tv-mobile:end */
 </style>
 </helmet>
-<div class="tv-root" data-theme="{{theme}}" style="--tv-acc-text: {{accText}}; --tv-acc-line: {{accLine}}; width: 100%; min-width: 1200px; box-sizing: border-box; background: var(--t0E0F10, #0E0F10); color: var(--tF2F3F4, #F2F3F4); display: flex; flex-direction: column; position: relative">
+<div class="tv-root" data-theme="{{theme}}" style="--tv-acc-text: {{accText}}; --tv-acc-line: {{accLine}}; width: 100%; min-width: 0; box-sizing: border-box; background: var(--t0E0F10, #0E0F10); color: var(--tF2F3F4, #F2F3F4); display: flex; flex-direction: column; position: relative">
 
 <!-- Announcement -->
 <div style="height: 44px; display: flex; align-items: center; justify-content: center; gap: 12px; background: var(--t16181A, #16181A); border-bottom: 1px solid var(--t2A2C2F, #2A2C2F); font-size: 14px">
@@ -1047,12 +2428,12 @@ svg[style*="inset: 28px"]{display:none}
 </div>
 
 <!-- Hero -->
-<section style="padding: 96px 64px 112px; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 64px; align-items: center">
+<section class="tv-hero-grid" style="padding: 96px 64px 112px; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 64px; align-items: center">
 <div style="display: flex; flex-direction: column; gap: 28px">
 <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.12em; color: var(--tv-acc-text, {{accent}})">_ AI INTEGRATION &amp; MARKETING PARTNER</div>
 <div style="display: flex; flex-direction: column; gap: 8px">
 <h1 style="font-size: 88px; line-height: 0.98; letter-spacing: -0.035em; font-weight: 600">Put AI to work across your enterprise</h1>
-<div style="height: 60px; display: flex; align-items: center; font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 500; letter-spacing: -0.02em; color: var(--tv-acc-text, {{accent}})">
+<div class="tv-hero-rotating" style="height: 60px; display: flex; align-items: center; font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 500; letter-spacing: -0.02em; color: var(--tv-acc-text, {{accent}})">
 <sc-for list="{{words}}" as="wd" hint-placeholder-count="1">
 <sc-if value="{{wd.on}}" hint-placeholder-val="{{true}}"><span class="tv-rise">{{wd.text}}</span></sc-if>
 </sc-for>
@@ -1061,7 +2442,7 @@ svg[style*="inset: 28px"]{display:none}
 </div>
 <p style="font-size: 20px; line-height: 1.55; color: var(--tB9BDC2, #B9BDC2); max-width: 580px">Three Vistas designs, integrates and runs AI across your marketing, sales and web stack — connected to your data, governed by your rules, and measured against revenue.</p>
 <div style="display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; gap: 14px; align-items: center">
+<div class="tv-hero-actions" style="display: flex; gap: 14px; align-items: center">
 <button type="button" onClick="{{openBook}}" style="display: flex; gap: 10px; align-items: center; font-size: 16px; font-weight: 600; padding: 17px 28px; border: 0; border-radius: 999px; background: {{accent}}; color: #0E0F10; cursor: pointer"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="12" rx="2" stroke="#0E0F10" stroke-width="1.6"></rect><path d="M1.5 6.5 H14.5 M5 1 V4 M11 1 V4" stroke="#0E0F10" stroke-width="1.6"></path></svg>Book a 30-min strategy call</button>
 <a href="#audit" style="font-size: 16px; font-weight: 600; padding: 16px 27px; border-radius: 999px; border: 1px solid var(--t4A4E53, #4A4E53)">Get a free AI audit</a>
 </div>
@@ -1075,7 +2456,7 @@ svg[style*="inset: 28px"]{display:none}
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: var(--tA2A7AD, #A2A7AD)">VISTA / AI OPERATIONS LAYER</span>
 <span style="display: flex; gap: 8px; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--tv-acc-text, {{accent}})"><span class="tv-pulse" style="width: 8px; height: 8px; border-radius: 50%; background: {{accent}}"></span>LIVE</span>
 </div>
-<div style="display: grid; grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1.1fr) 28px minmax(0, 1fr); align-items: center">
+<div class="tv-console-flow" style="display: grid; grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1.1fr) 28px minmax(0, 1fr); align-items: center">
 <div style="display: flex; flex-direction: column; gap: 8px">
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: var(--t80868D, #80868D)">YOUR STACK</span>
 <span style="font-size: 13px; padding: 9px 12px; background: var(--t1E2023, #1E2023); border: 1px solid var(--t2A2C2F, #2A2C2F); border-radius: 8px">Salesforce</span>
@@ -1101,7 +2482,7 @@ svg[style*="inset: 28px"]{display:none}
 <span style="font-size: 13px; padding: 9px 12px; background: var(--t1E2023, #1E2023); border: 1px solid var(--t2A2C2F, #2A2C2F); border-radius: 8px">Faster operations</span>
 </div>
 </div>
-<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
+<div class="tv-hero-metrics" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
 <div style="padding: 14px; border-radius: 10px; background: var(--t1E2023, #1E2023); display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600; font-variant-numeric: tabular-nums">{{cntPipe}}×</span><span style="font-size: 12px; color: var(--tA2A7AD, #A2A7AD)">pipeline influenced</span></div>
 <div style="padding: 14px; border-radius: 10px; background: var(--t1E2023, #1E2023); display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600; font-variant-numeric: tabular-nums">{{cntVel}}×</span><span style="font-size: 12px; color: var(--tA2A7AD, #A2A7AD)">content velocity</span></div>
 <div style="padding: 14px; border-radius: 10px; background: var(--t1E2023, #1E2023); display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600; font-variant-numeric: tabular-nums">{{cntHrs}} hrs</span><span style="font-size: 12px; color: var(--tA2A7AD, #A2A7AD)">saved per week</span></div>
@@ -1129,7 +2510,7 @@ svg[style*="inset: 28px"]{display:none}
 </div>
 <p style="font-size: 18px; line-height: 1.6; color: var(--tB9BDC2, #B9BDC2); max-width: 440px">For 15 years we helped businesses win search. Now we help larger organizations win where buyers actually ask — AI assistants, copilots and agents — and automate the work behind it.</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
+<div class="tv-shift-grid" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
 <div style="padding: 40px; border-radius: 20px; border: 1px solid var(--t2A2C2F, #2A2C2F); background: var(--t16181A, #16181A); display: flex; flex-direction: column; gap: 24px">
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: var(--t80868D, #80868D)">01 / THE SEARCH ERA</span>
 <h3 style="font-size: 36px; line-height: 1.1; letter-spacing: -0.02em; font-weight: 600; color: var(--tCDD0D4, #CDD0D4)">Rank on page one. Win the click.</h3>
@@ -1246,7 +2627,7 @@ svg[style*="inset: 28px"]{display:none}
 </div>
 </div>
 </sc-if>
-<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+<div class="tv-pillars-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
 <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 24px; border-top: 1px solid var(--t3A3D41, #3A3D41)">
 <h3 style="font-size: 26px; font-weight: 600; letter-spacing: -0.01em">Move fast</h3>
 <p style="font-size: 16px; line-height: 1.6; color: var(--tA2A7AD, #A2A7AD)">Prioritized use cases and pilots that reach production instead of stalling in a slide deck.</p>
@@ -1264,7 +2645,7 @@ svg[style*="inset: 28px"]{display:none}
 
 <!-- Audit lead magnet -->
 <section id="audit" style="padding: 0 64px; margin: 96px 0 0">
-<div style="padding: 56px; border-radius: 24px; background: {{accent}}; color: #0E0F10; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: center">
+<div class="tv-audit-card" style="padding: 56px; border-radius: 24px; background: {{accent}}; color: #0E0F10; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: center">
 <div style="display: flex; flex-direction: column; gap: 16px">
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.12em; font-weight: 500">_ FREE AI SEARCH VISIBILITY AUDIT</span>
 <h2 style="font-size: 48px; line-height: 1.04; letter-spacing: -0.03em; font-weight: 600; color: #0E0F10">Is AI recommending you, or your competitors?</h2>
@@ -1464,7 +2845,7 @@ svg[style*="inset: 28px"]{display:none}
 </div>
 <p style="font-size: 18px; line-height: 1.6; color: var(--tB9BDC2, #B9BDC2); max-width: 440px">Manufacturers, multi-location networks and regulated firms — the places where AI has the most to gain and the most to get right.</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
+<div class="tv-industries-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
 <a href="manufacturing.html" style="padding: 32px; border-radius: 18px; background: var(--t0E0F10, #0E0F10); border: 1px solid var(--t2A2C2F, #2A2C2F); display: flex; flex-direction: column; gap: 14px; min-height: 180px; box-sizing: border-box"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--tv-acc-text, {{accent}})">01</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600">Manufacturing &amp; building products</span><span style="font-size: 15px; line-height: 1.55; color: var(--tA2A7AD, #A2A7AD)">Dealer enablement, product-data AI and distributor marketing.</span></a>
 <a href="multi-location-marketing.html" style="padding: 32px; border-radius: 18px; background: var(--t0E0F10, #0E0F10); border: 1px solid var(--t2A2C2F, #2A2C2F); display: flex; flex-direction: column; gap: 14px; min-height: 180px; box-sizing: border-box"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--tv-acc-text, {{accent}})">02</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600">Multi-location &amp; franchise brands</span><span style="font-size: 15px; line-height: 1.55; color: var(--tA2A7AD, #A2A7AD)">Local visibility and personalization across every territory.</span></a>
 <a href="law-firms-marketing.html" style="padding: 32px; border-radius: 18px; background: var(--t0E0F10, #0E0F10); border: 1px solid var(--t2A2C2F, #2A2C2F); display: flex; flex-direction: column; gap: 14px; min-height: 180px; box-sizing: border-box"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--tv-acc-text, {{accent}})">03</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600">Legal &amp; professional services</span><span style="font-size: 15px; line-height: 1.55; color: var(--tA2A7AD, #A2A7AD)">Intake automation and compliant, authority-building content.</span></a>
@@ -1479,7 +2860,7 @@ svg[style*="inset: 28px"]{display:none}
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.12em; color: var(--tv-acc-text, {{accent}})">_ HOW WE ENGAGE</span>
 <h2 style="font-size: 60px; line-height: 1.04; letter-spacing: -0.03em; font-weight: 600">From first workshop to AI in production.</h2>
 </div>
-<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px">
+<div class="tv-engage-grid" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px">
 <div style="padding: 28px; border-radius: 18px; border: 1.5px solid var(--tv-acc-line, {{accent}}); background: var(--t1A1C1E, #1A1C1E); display: flex; flex-direction: column; gap: 14px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--tv-acc-text, {{accent}})">STEP 01</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600">Discover</span><span style="font-size: 15px; line-height: 1.6; color: var(--tCDD0D4, #CDD0D4)">Stakeholder interviews, stack and data audit, AI visibility baseline.</span></div>
 <div style="padding: 28px; border-radius: 18px; border: 1.5px solid var(--tv-acc-line, {{accent}}); background: var(--t1A1C1E, #1A1C1E); display: flex; flex-direction: column; gap: 14px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--tv-acc-text, {{accent}})">STEP 02</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600">Pilot</span><span style="font-size: 15px; line-height: 1.6; color: var(--tCDD0D4, #CDD0D4)">One high-value use case, shipped and measured against a clear KPI.</span></div>
 <div style="padding: 28px; border-radius: 18px; border: 1.5px solid var(--tv-acc-line, {{accent}}); background: var(--t1A1C1E, #1A1C1E); display: flex; flex-direction: column; gap: 14px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--tv-acc-text, {{accent}})">STEP 03</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600">Scale</span><span style="font-size: 15px; line-height: 1.6; color: var(--tCDD0D4, #CDD0D4)">Roll out across teams, regions and channels with governance in place.</span></div>
@@ -1508,7 +2889,7 @@ svg[style*="inset: 28px"]{display:none}
 </div>
 <sc-for list="{{stories}}" as="s" hint-placeholder-count="1">
 <sc-if value="{{s.on}}" hint-placeholder-val="{{true}}">
-<div class="tv-rise" style="display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 20px">
+<div class="tv-story-card tv-rise" style="display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 20px">
 <div style="padding: 44px; border-radius: 22px; background: var(--t16181A, #16181A); border: 1px solid var(--t2A2C2F, #2A2C2F); display: flex; flex-direction: column; justify-content: space-between; gap: 40px; min-height: 340px; box-sizing: border-box">
 <p style="font-family: 'Space Grotesk', sans-serif; font-size: 30px; line-height: 1.3; letter-spacing: -0.01em">{{s.quote}}</p>
 <div style="display: flex; gap: 16px; align-items: center">
@@ -1522,7 +2903,7 @@ svg[style*="inset: 28px"]{display:none}
 </div>
 </sc-if>
 </sc-for>
-<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--t2A2C2F, #2A2C2F); border-bottom: 1px solid var(--t2A2C2F, #2A2C2F)">
+<div class="tv-stats-bar" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--t2A2C2F, #2A2C2F); border-bottom: 1px solid var(--t2A2C2F, #2A2C2F)">
 <div style="padding: 36px 28px 36px 0; display: flex; flex-direction: column; gap: 8px; border-right: 1px solid var(--t2A2C2F, #2A2C2F)"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: var(--t80868D, #80868D)">EXPERIENCE</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 600; letter-spacing: -0.03em">15+ yrs</span><span style="font-size: 14px; color: var(--tA2A7AD, #A2A7AD)">in web, search and digital growth</span></div>
 <div style="padding: 36px 28px; display: flex; flex-direction: column; gap: 8px; border-right: 1px solid var(--t2A2C2F, #2A2C2F)"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: var(--t80868D, #80868D)">REACH</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 600; letter-spacing: -0.03em">37</span><span style="font-size: 14px; color: var(--tA2A7AD, #A2A7AD)">states and provinces across the US and Canada</span></div>
 <div style="padding: 36px 28px; display: flex; flex-direction: column; gap: 8px; border-right: 1px solid var(--t2A2C2F, #2A2C2F)"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: var(--t80868D, #80868D)">AI IN PRODUCTION</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 600; letter-spacing: -0.03em">9</span><span style="font-size: 14px; color: var(--tA2A7AD, #A2A7AD)">live AI workflows for clients</span></div>
@@ -1543,7 +2924,7 @@ svg[style*="inset: 28px"]{display:none}
 <span style="display: flex; gap: 12px; align-items: center"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 9.5 L7.5 14 L15 4.5" stroke="var(--tv-acc-line, {{accent}})" stroke-width="2"></path></svg>Senior strategists, not a sales script · NDA on request</span>
 </div>
 </div>
-<div style="display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px; align-items: stretch">
+<div class="tv-contact-grid" style="display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px; align-items: stretch">
 <dc-import name="Scheduler" accent="{{accent}}" hint-size="100%,640px"></dc-import>
 <form id="project-form" style="padding: 36px; border-radius: 22px; background: var(--t0E0F10, #0E0F10); border: 1px solid var(--t2A2C2F, #2A2C2F); display: flex; flex-direction: column; gap: 16px">
 <div data-fs-success style="padding: 14px 18px; border-radius: 10px; background: rgba(213, 240, 31, 0.15); border: 1px solid var(--tv-accent, {{accent}}); color: #FFFFFF; font-size: 15px; font-weight: 500; text-align: center; line-height: 1.5">Thanks for your submission! We’ll reply within one business day.</div>
@@ -1596,7 +2977,7 @@ svg[style*="inset: 28px"]{display:none}
 </div>
 </div>
 </div>
-<div style="display: grid; grid-template-columns: minmax(0, 1.6fr) repeat(4, minmax(0, 1fr)); gap: 40px">
+<div class="tv-footer-grid" style="display: grid; grid-template-columns: minmax(0, 1.6fr) repeat(4, minmax(0, 1fr)); gap: 40px">
 <div style="display: flex; flex-direction: column; gap: 20px">
 <div style="display: flex; align-items: center">
 <dc-import name="LogoWide" height="{{footLogoH}}" accent="{{accent}}" animate="{{yes}}" hint-size="271px,48px"></dc-import>
@@ -1620,7 +3001,7 @@ svg[style*="inset: 28px"]{display:none}
 <button type="button" onClick="{{openBook}}" style="align-self: flex-start; padding: 0; border: 0; background: transparent; color: var(--tv-acc-text, {{accent}}); font-size: 15px; font-weight: 600; cursor: pointer">Book a strategy call →</button>
 </div>
 </div>
-<div style="display: flex; justify-content: space-between; align-items: center; padding-top: 28px; border-top: 1px solid var(--t2A2C2F, #2A2C2F); font-size: 13px; color: var(--tA2A7AD, #A2A7AD)">
+<div class="tv-footer-bottom" style="display: flex; justify-content: space-between; align-items: center; padding-top: 28px; border-top: 1px solid var(--t2A2C2F, #2A2C2F); font-size: 13px; color: var(--tA2A7AD, #A2A7AD)">
 <span>© Three Vistas. All rights reserved.</span>
 <div style="display: flex; gap: 24px"><a href="disclaimer.html" style="color: var(--tA2A7AD, #A2A7AD)">Disclaimer</a><a href="privacy-policy.html" style="color: var(--tA2A7AD, #A2A7AD)">Privacy</a><a href="https://www.linkedin.com/company/threevistas/" style="color: var(--tA2A7AD, #A2A7AD)">LinkedIn</a><a href="https://x.com/threevistas" style="color: var(--tA2A7AD, #A2A7AD)">X</a><a href="https://www.facebook.com/ThreeVistas/" style="color: var(--tA2A7AD, #A2A7AD)">Facebook</a><a href="https://www.instagram.com/threevistas/" style="color: var(--tA2A7AD, #A2A7AD)">Instagram</a></div>
 </div>
@@ -1718,8 +3099,8 @@ body{margin:0}
 body{margin:0}
 </style>
 </helmet>
-<div style="width: 100%; box-sizing: border-box; border-radius: 22px; background: var(--t0E0F10, #0E0F10); border: 1.5px solid var(--tv-acc-line, {{accent}}); display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr); overflow: hidden; font-family: 'Instrument Sans', system-ui, sans-serif; color: var(--tF2F3F4, #F2F3F4)">
-<div style="padding: 36px; border-right: 1px solid var(--tv-acc-line, {{accent}}); background: var(--tv-map-hl, rgba(213,240,31,0.12)); display: flex; flex-direction: column; gap: 18px">
+<div class="tv-sched-card" style="width: 100%; box-sizing: border-box; border-radius: 22px; background: var(--t0E0F10, #0E0F10); border: 1.5px solid var(--tv-acc-line, {{accent}}); display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr); overflow: hidden; font-family: 'Instrument Sans', system-ui, sans-serif; color: var(--tF2F3F4, #F2F3F4)">
+<div class="tv-sched-info" style="padding: 36px; border-right: 1px solid var(--tv-acc-line, {{accent}}); background: var(--tv-map-hl, rgba(213,240,31,0.12)); display: flex; flex-direction: column; gap: 18px">
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: var(--tv-acc-text, {{accent}})">BOOK INSTANTLY</span>
 <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 30px; line-height: 1.1; letter-spacing: -0.02em; font-weight: 600; color: var(--tv-acc-text, {{accent}})">AI Strategy Session</h3>
 <div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: var(--tCDD0D4, #CDD0D4)">
@@ -1728,7 +3109,7 @@ body{margin:0}
 <span style="display: flex; gap: 10px; align-items: center"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="6" r="3.2" stroke="var(--tv-acc-text, {{accent}})" stroke-width="1.6"></circle><path d="M2.5 16 C3.5 12 14.5 12 15.5 16" stroke="var(--tv-acc-text, {{accent}})" stroke-width="1.6"></path></svg>With a senior AI strategist</span>
 </div>
 <p style="margin: 0; font-size: 14px; line-height: 1.6; color: var(--tA2A7AD, #A2A7AD)">Choose a time that works. Automatically creates a Google Calendar event and Google Meet link.</p>
-<div style="margin-top: auto; padding: 14px 16px; border-radius: 12px; background: var(--t1A1C1E, #1A1C1E); border: 1px solid var(--tv-acc-line, {{accent}}); display: flex; flex-direction: column; gap: 4px">
+<div class="tv-sched-selection" style="margin-top: auto; padding: 14px 16px; border-radius: 12px; background: var(--t1A1C1E, #1A1C1E); border: 1px solid var(--tv-acc-line, {{accent}}); display: flex; flex-direction: column; gap: 4px">
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: var(--t80868D, #80868D)">YOUR SELECTION</span>
 <span style="font-size: 15px; font-weight: 600">{{summary}}</span>
 </div>
@@ -1736,7 +3117,7 @@ body{margin:0}
 </div>
 <div style="position: relative; display: flex; flex-direction: column">
 <sc-if value="{{isSelect}}" hint-placeholder-val="{{true}}">
-<div style="padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<div class="tv-sched-select-pane" style="padding: 32px; display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; justify-content: space-between; align-items: center">
 <span style="font-size: 16px; font-weight: 600">Select a date &amp; time</span>
 <div style="display: flex; align-items: center; gap: 8px">
@@ -1745,28 +3126,28 @@ body{margin:0}
 <button type="button" onClick="{{nextMonth}}" aria-label="Next month" style="border: 0; background: transparent; color: var(--tF2F3F4, #F2F3F4); font-size: 18px; line-height: 1; cursor: pointer; padding: 2px 6px">›</button>
 </div>
 </div>
-<div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; text-align: center">
+<div class="tv-sched-cal-grid" style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; text-align: center">
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--t80868D, #80868D)">SUN</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--t80868D, #80868D)">MON</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--t80868D, #80868D)">TUE</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--t80868D, #80868D)">WED</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--t80868D, #80868D)">THU</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--t80868D, #80868D)">FRI</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--t80868D, #80868D)">SAT</span>
 <sc-for list="{{days}}" as="d" hint-placeholder-count="21">
-<button type="button" disabled="{{d.disabled}}" onClick="{{d.pick}}" aria-label="{{d.aria}}" style="height: 44px; border: 0; border-radius: 50%; background: {{d.bg}}; color: {{d.fg}}; font-family: 'Instrument Sans', sans-serif; font-size: 14px; font-weight: {{d.weight}}; cursor: {{d.cursor}}">{{d.label}}</button>
+<button class="tv-sched-day-btn" type="button" disabled="{{d.disabled}}" onClick="{{d.pick}}" aria-label="{{d.aria}}" style="width: 42px; height: 42px; max-width: 100%; aspect-ratio: 1; border: 0; border-radius: 50%; background: {{d.bg}}; color: {{d.fg}}; font-family: 'Instrument Sans', sans-serif; font-size: 14px; font-weight: {{d.weight}}; cursor: {{d.cursor}}; margin: 0 auto; display: inline-flex; align-items: center; justify-content: center; padding: 0">{{d.label}}</button>
 </sc-for>
 </div>
 <span style="font-size: 14px; color: var(--tCDD0D4, #CDD0D4)">{{dayLong}} · Eastern Time</span>
-<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+<div class="tv-sched-slots-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
 <sc-for list="{{slots}}" as="t" hint-placeholder-count="6">
 <button type="button" onClick="{{t.pick}}" style="height: 44px; border-radius: 10px; border: 1px solid var(--tv-acc-line, {{accent}}); background: {{t.bg}}; color: {{t.fg}}; font-family: 'Instrument Sans', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer">{{t.label}}</button>
 </sc-for>
 </div>
 <sc-if value="{{hasWebhook}}" hint-placeholder-val="{{false}}">
-<button type="button" onClick="{{goToDetails}}" style="margin-top: 4px; height: 52px; border: 0; border-radius: 999px; background: {{accent}}; color: #0E0F10; font-family: inherit; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; cursor: pointer">Confirm&nbsp;{{slotLabel}}&nbsp;→</button>
+<button class="tv-sched-confirm-btn" type="button" onClick="{{goToDetails}}" style="margin-top: 4px; height: 52px; border: 0; border-radius: 999px; background: {{accent}}; color: #0E0F10; font-family: inherit; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; cursor: pointer">Confirm&nbsp;{{slotLabel}}&nbsp;→</button>
 </sc-if>
 <sc-if value="{{noWebhook}}" hint-placeholder-val="{{true}}">
-<a href="{{gcalUrl}}" target="_blank" rel="noopener noreferrer" style="margin-top: 4px; height: 52px; border-radius: 999px; background: {{accent}}; color: #0E0F10; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Confirm&nbsp;{{slotLabel}}&nbsp;→</a>
+<a class="tv-sched-confirm-btn" href="{{gcalUrl}}" target="_blank" rel="noopener noreferrer" style="margin-top: 4px; height: 52px; border-radius: 999px; background: {{accent}}; color: #0E0F10; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">Confirm&nbsp;{{slotLabel}}&nbsp;→</a>
 </sc-if>
 </div>
 </sc-if>
 <sc-if value="{{isDetails}}" hint-placeholder-val="{{false}}">
-<form onSubmit="{{submitBooking}}" style="padding: 32px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<form class="tv-sched-details-form" onSubmit="{{submitBooking}}" style="padding: 32px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
 <div style="display: flex; justify-content: space-between; align-items: center">
 <span style="font-size: 16px; font-weight: 600">Enter your details</span>
 <button type="button" onClick="{{backToSelect}}" style="border: 0; background: transparent; color: var(--tv-acc-text, {{accent}}); font-size: 13px; font-family: inherit; cursor: pointer; padding: 4px 0">← Change time</button>
