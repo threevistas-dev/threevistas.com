@@ -148,16 +148,31 @@ button{font-family:'Instrument Sans',system-ui,sans-serif}
 .tv-mnav-panel{position:absolute;left:0;right:0;top:68px;z-index:40;padding:12px 20px 24px;background:var(--t16181A,#16181A);border-bottom:1px solid var(--t2A2C2F,#2A2C2F);display:flex;flex-direction:column;max-height:calc(100vh - 68px);overflow:auto;box-sizing:border-box}
 .tv-mnav-panel a{padding:13px 0;font-size:17px;font-weight:600;border-bottom:1px solid var(--t2A2C2F,#2A2C2F);color:var(--tF2F3F4,#F2F3F4);white-space:normal !important}
 .tv-mnav-panel span{padding:18px 0 4px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--t80868D,#80868D)}
+.tv-root section,.tv-root footer{padding-left:28px !important;padding-right:28px !important;padding-top:64px !important;padding-bottom:64px !important}
+.tv-root [style*="justify-content: space-between; align-items: flex-end"],.tv-root [style*="justify-content: space-between; align-items: center; gap: 48px"]{flex-direction:column !important;align-items:flex-start !important;gap:20px !important}
+.tv-root [style*="grid-template-columns"]:not([style*="repeat(7"]):not([style*="grid-template-rows"]):not(.tv-sched-slots-grid){grid-template-columns:minmax(0,1fr) !important}
+.tv-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:36px 24px !important}
+.tv-footer-grid > div:first-child{grid-column:span 2 !important}
+.tv-contact-grid,.tv-sched-card{grid-template-columns:minmax(0,1fr) !important}
+.tv-sched-info{border-right:0 !important;border-bottom:1.5px solid var(--tv-acc-line,#D5F01F) !important;padding:24px !important}
+.tv-sched-day-btn{width:42px !important;height:42px !important;aspect-ratio:1/1 !important;border-radius:50% !important;margin:0 auto !important;display:inline-flex !important;align-items:center !important;justify-content:center !important;padding:0 !important}
 }
 @media (max-width:480px){
 .tv-root nav > a:first-child{transform:scale(0.85);transform-origin:left center}
 }
-@media (max-width:760px){
+@media (max-width:768px){
 .tv-root{padding-bottom:76px}
 .tv-root section,.tv-root footer{padding-left:20px !important;padding-right:20px !important}
 .tv-root section{padding-top:56px !important;padding-bottom:56px !important}
 .tv-root section[style^="padding: 0 "]{padding-top:0 !important}
-.tv-root section[style*="64px 0;"],.tv-root section[style*="64px 0\""]{padding-bottom:0 !important}
+.tv-root section[style*="64px 0"]{padding-bottom:0 !important}
+.tv-sched-card{grid-template-columns:minmax(0,1fr) !important}
+.tv-sched-info{border-right:0 !important;border-bottom:1.5px solid var(--tv-acc-line,#D5F01F) !important;padding:24px 18px !important}
+.tv-sched-day-btn{width:38px !important;height:38px !important;aspect-ratio:1/1 !important;border-radius:50% !important;margin:0 auto !important;display:inline-flex !important;align-items:center !important;justify-content:center !important;padding:0 !important}
+.tv-sched-slots-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:8px !important}
+.tv-sched-confirm-btn{width:100% !important;margin:8px 0 0 !important}
+.tv-footer-grid{grid-template-columns:minmax(0,1fr) !important;gap:28px !important}
+.tv-footer-grid > div:first-child{grid-column:auto !important}
 .tv-root [style*="grid-template-columns"]:not([style*="repeat(7"]):not([style*="grid-template-rows"]){grid-template-columns:minmax(0,1fr) !important}
 .tv-root [style*="gap: 64px"],.tv-root [style*="gap: 72px"],.tv-root [style*="gap: 56px"],.tv-root [style*="gap: 48px"]{gap:32px !important}
 .tv-root [style*="padding: 64px;"],.tv-root [style*="padding: 56px;"],.tv-root [style*="padding: 44px;"],.tv-root [style*="padding: 40px;"]{padding:22px !important}
@@ -296,16 +311,31 @@ button{font-family:'Instrument Sans',system-ui,sans-serif}
 .tv-mnav-panel{position:absolute;left:0;right:0;top:68px;z-index:40;padding:12px 20px 24px;background:var(--t16181A,#16181A);border-bottom:1px solid var(--t2A2C2F,#2A2C2F);display:flex;flex-direction:column;max-height:calc(100vh - 68px);overflow:auto;box-sizing:border-box}
 .tv-mnav-panel a{padding:13px 0;font-size:17px;font-weight:600;border-bottom:1px solid var(--t2A2C2F,#2A2C2F);color:var(--tF2F3F4,#F2F3F4);white-space:normal !important}
 .tv-mnav-panel span{padding:18px 0 4px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--t80868D,#80868D)}
+.tv-root section,.tv-root footer{padding-left:28px !important;padding-right:28px !important;padding-top:64px !important;padding-bottom:64px !important}
+.tv-root [style*="justify-content: space-between; align-items: flex-end"],.tv-root [style*="justify-content: space-between; align-items: center; gap: 48px"]{flex-direction:column !important;align-items:flex-start !important;gap:20px !important}
+.tv-root [style*="grid-template-columns"]:not([style*="repeat(7"]):not([style*="grid-template-rows"]):not(.tv-sched-slots-grid){grid-template-columns:minmax(0,1fr) !important}
+.tv-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:36px 24px !important}
+.tv-footer-grid > div:first-child{grid-column:span 2 !important}
+.tv-contact-grid,.tv-sched-card{grid-template-columns:minmax(0,1fr) !important}
+.tv-sched-info{border-right:0 !important;border-bottom:1.5px solid var(--tv-acc-line,#D5F01F) !important;padding:24px !important}
+.tv-sched-day-btn{width:42px !important;height:42px !important;aspect-ratio:1/1 !important;border-radius:50% !important;margin:0 auto !important;display:inline-flex !important;align-items:center !important;justify-content:center !important;padding:0 !important}
 }
 @media (max-width:480px){
 .tv-root nav > a:first-child{transform:scale(0.85);transform-origin:left center}
 }
-@media (max-width:760px){
+@media (max-width:768px){
 .tv-root{padding-bottom:76px}
 .tv-root section,.tv-root footer{padding-left:20px !important;padding-right:20px !important}
 .tv-root section{padding-top:56px !important;padding-bottom:56px !important}
 .tv-root section[style^="padding: 0 "]{padding-top:0 !important}
-.tv-root section[style*="64px 0;"],.tv-root section[style*="64px 0\""]{padding-bottom:0 !important}
+.tv-root section[style*="64px 0"]{padding-bottom:0 !important}
+.tv-sched-card{grid-template-columns:minmax(0,1fr) !important}
+.tv-sched-info{border-right:0 !important;border-bottom:1.5px solid var(--tv-acc-line,#D5F01F) !important;padding:24px 18px !important}
+.tv-sched-day-btn{width:38px !important;height:38px !important;aspect-ratio:1/1 !important;border-radius:50% !important;margin:0 auto !important;display:inline-flex !important;align-items:center !important;justify-content:center !important;padding:0 !important}
+.tv-sched-slots-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:8px !important}
+.tv-sched-confirm-btn{width:100% !important;margin:8px 0 0 !important}
+.tv-footer-grid{grid-template-columns:minmax(0,1fr) !important;gap:28px !important}
+.tv-footer-grid > div:first-child{grid-column:auto !important}
 .tv-root [style*="grid-template-columns"]:not([style*="repeat(7"]):not([style*="grid-template-rows"]){grid-template-columns:minmax(0,1fr) !important}
 .tv-root [style*="gap: 64px"],.tv-root [style*="gap: 72px"],.tv-root [style*="gap: 56px"],.tv-root [style*="gap: 48px"]{gap:32px !important}
 .tv-root [style*="padding: 64px;"],.tv-root [style*="padding: 56px;"],.tv-root [style*="padding: 44px;"],.tv-root [style*="padding: 40px;"]{padding:22px !important}
@@ -370,7 +400,7 @@ svg[style*="inset: 28px"]{display:none}
 .tv-card-link:hover{border-color:var(--tv-acc-line,#D5F01F) !important}
 </style>
 </helmet>
-<div class="tv-root" data-theme="{{theme}}" style="--tv-acc-text: {{accText}}; --tv-acc-line: {{accLine}}; width: 100%; min-width: 1200px; box-sizing: border-box; background: var(--t0E0F10, #0E0F10); color: var(--tF2F3F4, #F2F3F4); display: flex; flex-direction: column; position: relative">
+<div class="tv-root" data-theme="{{theme}}" style="--tv-acc-text: {{accText}}; --tv-acc-line: {{accLine}}; width: 100%; min-width: 0; box-sizing: border-box; background: var(--t0E0F10, #0E0F10); color: var(--tF2F3F4, #F2F3F4); display: flex; flex-direction: column; position: relative">
 <!-- Announcement -->
 <div style="height: 44px; display: flex; align-items: center; justify-content: center; gap: 12px; background: var(--t16181A, #16181A); border-bottom: 1px solid var(--t2A2C2F, #2A2C2F); font-size: 14px">
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; padding: 3px 8px; border-radius: 4px; background: {{accent}}; color: #0E0F10; font-weight: 500">NEW</span>
